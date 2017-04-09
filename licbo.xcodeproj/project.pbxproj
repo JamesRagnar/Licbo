@@ -12,6 +12,9 @@
 		BA1A0F571E95F1F000A7CD90 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */; };
 		BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FAD01E952841002E59D0 /* RxSwift.framework */; };
+		BA8DB26C1E9A7EB7008BB231 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */; };
+		BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */; };
+		BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */; };
 		BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */; };
 		BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */; };
 		BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA554E41E94AC2000F4D455 /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		BA36FACF1E952841002E59D0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BA36FAD01E952841002E59D0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		BA36FAD11E952841002E59D0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
+		BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+RxSwift.swift"; sourceTree = "<group>"; };
+		BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		BAA554DA1E94AC1F00F4D455 /* licbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = licbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 				BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */,
 				BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */,
 				BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */,
+				BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */,
 				BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */,
 				BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */,
 				BAC3B9711E993F0A003E5A92 /* Rx */,
@@ -156,6 +163,8 @@
 			children = (
 				BAC3B96D1E993ED0003E5A92 /* BaseViewController.swift */,
 				BAC3B96F1E993ED7003E5A92 /* BaseTableViewController.swift */,
+				BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */,
+				BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */,
 			);
 			name = Rx;
 			sourceTree = "<group>";
@@ -288,12 +297,15 @@
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BAC3B9401E984810003E5A92 /* ProductsViewModel.swift in Sources */,
 				BAA555021E94ACCA00F4D455 /* Product.swift in Sources */,
+				BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
 				BAC3B93C1E98470E003E5A92 /* DashboardViewModel.swift in Sources */,
+				BA8DB26C1E9A7EB7008BB231 /* UserLocationManager.swift in Sources */,
 				BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */,
 				BAC3B93E1E984807003E5A92 /* ProductsViewController.swift in Sources */,
 				BAA555041E94AE1D00F4D455 /* RootViewModel.swift in Sources */,
 				BAA555001E94ACCA00F4D455 /* BaseResponseObject.swift in Sources */,
+				BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				BAC3B93A1E984707003E5A92 /* DashboardViewController.swift in Sources */,
 				BAC3B9701E993ED7003E5A92 /* BaseTableViewController.swift in Sources */,
 				BA1A0F551E95F14F00A7CD90 /* MapViewController.swift in Sources */,

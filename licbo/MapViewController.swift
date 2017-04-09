@@ -26,14 +26,30 @@ class MapViewController: UIViewController {
         view.addSubview(mapView)
     }
     
+    private var userLocationPin: MKPointAnnotation?
+    private lazy var locationManager = UserLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapViewModel.stores.subscribe(onNext: { [weak self] (stores) in
-            self?.updateMapPins(stores)
-        }).addDisposableTo(disposeBag)
+        locationManager
+        .location
+        .subscribe(onNext: { [weak self] (location) in
+            guard let location = location else {
+                return
+            }
+            let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            if let userPin = self?.userLocationPin {
+                userPin.coordinate = coordinate
+                return
+            }
+            let userPin = MKPointAnnotation()
+            userPin.coordinate = coordinate
+            self?.mapView.addAnnotation(userPin)
+            self?.userLocationPin = userPin
+        }).disposed(by: disposeBag)
         
-        mapViewModel.fetchStores()
+        locationManager.requestUserLocation()
     }
     
     private func updateMapPins(_ stores: [Store]) {
