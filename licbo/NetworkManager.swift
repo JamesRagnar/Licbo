@@ -56,7 +56,8 @@ class NetworkManager {
         
         var endpoint = "stores"
         
-        if let latitude = location?.coordinate.latitude.description, let longitude = location?.coordinate.longitude.description {
+        if let latitude = location?.coordinate.latitude.description,
+            let longitude = location?.coordinate.longitude.description {
             endpoint.append("?lat=" + latitude + "&lon=" + longitude + "&per_page=5")
         }
         
