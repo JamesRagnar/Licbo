@@ -34,6 +34,8 @@ Temporary Items
 build/
 DerivedData/
 
+*.mobileprovision
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
