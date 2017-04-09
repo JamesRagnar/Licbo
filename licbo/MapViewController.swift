@@ -10,10 +10,9 @@ import Foundation
 import MapKit
 import RxSwift
 
-class MapViewController: UIViewController {
+class MapViewController: BaseViewController {
     
     private lazy var mapViewModel = MapViewModel()
-    private lazy var disposeBag = DisposeBag()
     
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView(frame: self.view.frame)
@@ -26,10 +25,14 @@ class MapViewController: UIViewController {
         view.addSubview(mapView)
     }
     
+    private var userLocationPin: MKPointAnnotation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapViewModel.stores.subscribe(onNext: { [weak self] (stores) in
+        mapViewModel
+            .stores
+            .subscribe(onNext: { [weak self] (stores) in
             self?.updateMapPins(stores)
         }).addDisposableTo(disposeBag)
         

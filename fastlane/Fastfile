@@ -1,0 +1,30 @@
+fastlane_version "2.26.1"
+
+default_platform :ios
+
+platform :ios do
+
+  before_all do
+    Dir.chdir("..") do
+      # code here runs in the parent directory
+      sh "scripts/update_carthage"
+    end    
+  end
+
+  lane :setup do
+    puts "Done"
+  end
+
+  lane :test do
+    scan
+  end
+
+  lane :beta do
+    increment_build_number
+    sigh
+    match(type: "appstore")
+    scan
+    gym(scheme: "licbo")
+    pilot
+  end
+end
