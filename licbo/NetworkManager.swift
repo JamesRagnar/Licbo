@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class NetworkManager {
     
@@ -51,8 +52,15 @@ class NetworkManager {
         }.resume()
     }
     
-    public static func getStores(_ result: @escaping ([Store]) -> Void) {
-        get("stores") { (data) in
+    public static func getStores(withLocation location: CLLocation? = nil, result: @escaping ([Store]) -> Void) {
+        
+        var endpoint = "stores"
+        
+        if let latitude = location?.coordinate.latitude.description, let longitude = location?.coordinate.longitude.description {
+            endpoint.append("?lat=" + latitude + "&lon=" + longitude + "&per_page=5")
+        }
+        
+        get(endpoint) { (data) in
             var responseData = [Store]()
             if let stores = data?["result"] as? [[String: Any]] {
                 for storeData in stores {

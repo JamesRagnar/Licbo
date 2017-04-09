@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import CoreLocation
 
 protocol MapViewModelType {
     var stores: Observable<[Store]> { get }
@@ -17,14 +18,29 @@ protocol MapViewModelType {
 class MapViewModel {
     
     private lazy var data = Variable<[Store]>([])
-
+    private lazy var locationManager = UserLocationManager()
+    private lazy var disposeBag = DisposeBag()
+    
     var stores: Observable<[Store]> {
         return data.asObservable()
     }
     
     func fetchStores() {
-        NetworkManager.getStores { [weak self] (items) in
-            self?.data.value = items
+        locationManager
+            .location
+            .subscribe(onNext: { [weak self] (location) in
+                guard let location = location else {
+                    return
+                }
+                self?.queryStores(location)
+            }).disposed(by: disposeBag)
+        
+        locationManager.requestUserLocation()
+    }
+    
+    private func queryStores(_ location: CLLocation?) {
+        NetworkManager.getStores(withLocation: location) { [weak self] (stores) in
+            self?.data.value = stores
         }
     }
 }
