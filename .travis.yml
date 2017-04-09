@@ -2,7 +2,7 @@ language: objective-c
 cache: cocoapods
 osx_image: xcode8.3
 script:
-  - scripts/travis
+  - sh scripts/travis
 cache:
   directories:
     - Carthage
