@@ -3,4 +3,6 @@ cache: cocoapods
 osx_image: xcode8.3
 script:
   - scripts/travis
-
+cache:
+  directories:
+    - Carthage
