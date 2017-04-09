@@ -20,7 +20,8 @@ platform :ios do
   end
 
   lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
+    sigh
+    match(type: "appstore") # more information: https://codesigning.guide
     gym(scheme: "licbo")
     # pilot
   end

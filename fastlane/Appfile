@@ -1,4 +1,4 @@
-app_identifier "com.ragnar.licbo" # The bundle identifier of your app
+app_identifier "app.ragnar.licbo" # The bundle identifier of your app
 apple_id "james.harquail@hotmail.com" # Your Apple email address
 
 team_id "W375UQHBF4"  # Developer Portal Team ID
