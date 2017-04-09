@@ -20,6 +20,7 @@ platform :ios do
   end
 
   lane :beta do
+    increment_build_number
     sigh
     match(type: "appstore")
     gym(scheme: "licbo")

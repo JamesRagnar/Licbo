@@ -16,6 +16,7 @@
 		BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */; };
 		BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */; };
 		BA8DB2721E9AB7A3008BB231 /* waterloo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */; };
+		BA96ABAA1E9AEE9F0012005F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */; };
 		BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */; };
 		BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA554E41E94AC2000F4D455 /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA96ABAA1E9AEE9F0012005F /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +231,7 @@
 					BAA554ED1E94AC2000F4D455 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = RC4K8C5DLM;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = BAA554D91E94AC1F00F4D455;
 					};
 				};
@@ -484,6 +486,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = RC4K8C5DLM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = licboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ragnar.licboTests;
@@ -499,6 +505,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = RC4K8C5DLM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = licboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ragnar.licboTests;
