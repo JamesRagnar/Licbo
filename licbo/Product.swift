@@ -9,7 +9,7 @@
 import Foundation
 
 class Product: BaseResponseObject {
-    
+
     public func name() -> String? {
         return typedValue(for: "name")
     }

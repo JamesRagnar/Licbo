@@ -11,19 +11,19 @@ import RxSwift
 import RxCocoa
 
 class DashboardViewController: BaseTableViewController {
-    
+
     private struct Constants {
         static let cellIdentifier = "dashboardCell"
     }
-    
+
     private lazy var dashboardViewModel = DashboardViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: Constants.cellIdentifier)
-        
+
         dashboardViewModel
             .menuItems
             .bindTo(
@@ -31,10 +31,10 @@ class DashboardViewController: BaseTableViewController {
                     .rx
                     .items(cellIdentifier: Constants.cellIdentifier,
                            cellType: UITableViewCell.self)) {
-                            (row, item, cell) in
+                            (_, item, cell) in
                             cell.textLabel?.text = item
             }.disposed(by: disposeBag)
-        
+
         tableView
             .rx
             .modelSelected(String.self)
@@ -43,7 +43,7 @@ class DashboardViewController: BaseTableViewController {
             })
             .disposed(by: disposeBag)
     }
-    
+
     private func rowSelected(_ title: String) {
         if title == "Products" {
             self.navigationController?.pushViewController(ProductsViewController(),
