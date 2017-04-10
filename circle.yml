@@ -2,7 +2,7 @@ machine:
   xcode:
     version: 8.3
 dependencies:
-  override:
+  post:
     - bundle exec fastlane setup
   cache_directories:
     - "Carthage"
