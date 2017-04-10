@@ -16,15 +16,15 @@ protocol MapViewModelType {
 }
 
 class MapViewModel {
-    
+
     private lazy var data = Variable<[Store]>([])
     private lazy var locationManager = UserLocationManager()
     private lazy var disposeBag = DisposeBag()
-    
+
     var stores: Observable<[Store]> {
         return data.asObservable()
     }
-    
+
     func fetchStores() {
         locationManager
             .location
@@ -34,10 +34,10 @@ class MapViewModel {
                 }
                 self?.queryStores(location)
             }).disposed(by: disposeBag)
-        
+
         locationManager.requestUserLocation()
     }
-    
+
     private func queryStores(_ location: CLLocation?) {
         NetworkManager.getStores(withLocation: location) { [weak self] (stores) in
             self?.data.value = stores

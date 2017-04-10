@@ -10,26 +10,27 @@ import Foundation
 import CoreLocation
 
 class NetworkManager {
-    
+
+    // swiftlint:disable:next line_length
     private static let tempAccessToken = "Token MDpjY2YyMzU5Ni0xOWE0LTExZTctOWFjNy02ZmVkYzVlMTkwODg6azR2RVVOb2JLcWNEMTRGRmg0NEZiNzdFUEdXZGphR0lxSmNE"
     private static let rootURL = "https://lcboapi.com/"
-    
+
     private static func get(_ endpoint: String?, result: @escaping ([String: Any]?) -> Void) {
-        
+
         var urlString = rootURL
-        
+
         if let endpoint = endpoint {
-            urlString = urlString + endpoint
+            urlString += endpoint
         }
-        
+
         guard let url = URL(string: urlString) else {
             return
         }
-        
+
         var req = URLRequest(url: url)
         req.setValue(tempAccessToken, forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: req) { (data, response, error) in
+
+        URLSession.shared.dataTask(with: req) { (data, _, error) in
             if let error = error {
                 print(error)
                 result(nil)
@@ -51,16 +52,16 @@ class NetworkManager {
             result(nil)
         }.resume()
     }
-    
+
     public static func getStores(withLocation location: CLLocation? = nil, result: @escaping ([Store]) -> Void) {
-        
+
         var endpoint = "stores"
-        
+
         if let latitude = location?.coordinate.latitude.description,
             let longitude = location?.coordinate.longitude.description {
             endpoint.append("?lat=" + latitude + "&lon=" + longitude + "&per_page=5")
         }
-        
+
         get(endpoint) { (data) in
             var responseData = [Store]()
             if let stores = data?["result"] as? [[String: Any]] {
@@ -73,7 +74,7 @@ class NetworkManager {
             result(responseData)
         }
     }
-    
+
     public static func getProducts(_ result: @escaping ([Product]) -> Void) {
         get("products") { (data) in
             var responseData = [Product]()
@@ -87,8 +88,8 @@ class NetworkManager {
             result(responseData)
         }
     }
-    
+
     public static func getInventories() {
-        
+
     }
 }

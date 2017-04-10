@@ -18,12 +18,12 @@ protocol UserLocationManagerType {
 }
 
 class UserLocationManager: UserLocationManagerType {
-    
+
     private lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         return locationManager
     }()
-    
+
     /*
      *  authorized
      *
@@ -44,14 +44,14 @@ class UserLocationManager: UserLocationManagerType {
             return false
         }
     }
-    
+
     private lazy var disposeBag = DisposeBag()
-    
+
     init() {
         locationManager
             .rx
             .didChangeAuthorizationStatus
-            .subscribe(onNext: { [weak self] (authStatus) in
+            .subscribe(onNext: { [weak self] (_) in
                 guard let authorized = self?.authorized() else {
                     return
                 }
@@ -60,7 +60,7 @@ class UserLocationManager: UserLocationManagerType {
                     self?.locationManager.requestLocation()
                 }
         }).disposed(by: disposeBag)
-        
+
         locationManager
             .rx
             .didFailWithError
@@ -68,7 +68,7 @@ class UserLocationManager: UserLocationManagerType {
                 print(error)
             }).disposed(by: disposeBag)
     }
-    
+
     func requestUserLocation() {
         guard let authorized = authorized() else {
             locationManager.requestWhenInUseAuthorization()
@@ -78,7 +78,7 @@ class UserLocationManager: UserLocationManagerType {
             locationManager.requestLocation()
         }
     }
-    
+
     var location: Observable<CLLocation?> {
         return locationManager
             .rx

@@ -21,7 +21,7 @@
 		BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */; };
 		BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA554E41E94AC2000F4D455 /* Assets.xcassets */; };
 		BAA554E81E94AC2000F4D455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA554E61E94AC2000F4D455 /* LaunchScreen.storyboard */; };
-		BAA554F31E94AC2000F4D455 /* licboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554F21E94AC2000F4D455 /* licboTests.swift */; };
+		BAA554F31E94AC2000F4D455 /* LicboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554F21E94AC2000F4D455 /* LicboTests.swift */; };
 		BAA555001E94ACCA00F4D455 /* BaseResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */; };
 		BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */; };
 		BAA555021E94ACCA00F4D455 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554FF1E94ACCA00F4D455 /* Product.swift */; };
@@ -63,7 +63,7 @@
 		BAA554E71E94AC2000F4D455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAA554E91E94AC2000F4D455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA554EE1E94AC2000F4D455 /* licboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = licboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAA554F21E94AC2000F4D455 /* licboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = licboTests.swift; sourceTree = "<group>"; };
+		BAA554F21E94AC2000F4D455 /* LicboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicboTests.swift; sourceTree = "<group>"; };
 		BAA554F41E94AC2000F4D455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseObject.swift; sourceTree = "<group>"; };
 		BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		BAA554F11E94AC2000F4D455 /* licboTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAA554F21E94AC2000F4D455 /* licboTests.swift */,
+				BAA554F21E94AC2000F4D455 /* LicboTests.swift */,
 				BAA554F41E94AC2000F4D455 /* Info.plist */,
 			);
 			path = licboTests;
@@ -185,6 +185,7 @@
 				BAA554D71E94AC1F00F4D455 /* Frameworks */,
 				BAA554D81E94AC1F00F4D455 /* Resources */,
 				BA36FAD61E952846002E59D0 /* Carthage */,
+				BA96ABAB1E9B29F00012005F /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -292,6 +293,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		BA96ABAB1E9B29F00012005F /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA554F31E94AC2000F4D455 /* licboTests.swift in Sources */,
+				BAA554F31E94AC2000F4D455 /* LicboTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

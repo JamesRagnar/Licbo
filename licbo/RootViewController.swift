@@ -9,12 +9,12 @@
 import UIKit
 
 class RootViewController: BaseViewController {
-    
+
     private lazy var navController: UINavigationController = {
         let navController = UINavigationController(rootViewController: DashboardViewController())
         return navController
     }()
-    
+
     override func loadView() {
         super.loadView()
         addChildViewController(navController)
