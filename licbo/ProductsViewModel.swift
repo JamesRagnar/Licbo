@@ -15,20 +15,20 @@ protocol ProductsViewModelType {
 }
 
 class ProductsViewModel: ProductsViewModelType {
-    
+
     private lazy var data = Variable<[Product]>([])
-    
+
     var products: Observable<[Product]> {
         return data.asObservable()
     }
-    
+
     func fetchProducts() {
         NetworkManager.getProducts { [weak self] (items) in
             self?.data.value = items
         }
     }
-    
+
     func selectProduct(_ product: Product) {
-        
+
     }
 }

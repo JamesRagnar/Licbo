@@ -1,0 +1,14 @@
+machine:
+  xcode:
+    version: 8.2.1
+dependencies:
+  post:
+    - bundle exec fastlane setup
+  cache_directories:
+    - "Carthage"
+test:
+  override:
+    - bundle exec fastlane test
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/fastlane
+    - cp fastlane/test_output/report.xml $CIRCLE_TEST_REPORTS/fastlane

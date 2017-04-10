@@ -10,6 +10,6 @@ import UIKit
 import RxSwift
 
 class BaseTableViewController: UITableViewController {
-    
+
     open lazy var disposeBag = DisposeBag()
 }
