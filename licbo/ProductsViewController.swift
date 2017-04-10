@@ -21,7 +21,8 @@ class ProductsViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: Constants.cellIdentifier)
         
         productsViewModel
             .products
@@ -38,7 +39,8 @@ class ProductsViewController: BaseTableViewController {
             .rx
             .modelSelected(Product.self)
             .subscribe(onNext: { [weak self] product in
-                self?.navigationController?.pushViewController(MapViewController(), animated: true)
+                self?.navigationController?.pushViewController(MapViewController(),
+                                                               animated: true)
             })
             .disposed(by: disposeBag)
         
