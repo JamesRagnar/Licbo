@@ -21,8 +21,8 @@ platform :ios do
 
   lane :beta do
     increment_build_number
-    sigh
     match(type: "appstore")
+    sigh
     scan
     gym(scheme: "licbo")
     pilot
