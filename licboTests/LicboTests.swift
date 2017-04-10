@@ -1,6 +1,6 @@
 //
-//  licboTests.swift
-//  licboTests
+//  LicboTests.swift
+//  LicboTests
 //
 //  Created by James Harquail on 2017-04-05.
 //  Copyright © 2017 Ragnar Development. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import licbo
 
-class licboTests: XCTestCase {
+class LicboTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

@@ -30,8 +30,7 @@ class ProductsViewController: BaseTableViewController {
                 tableView
                     .rx
                     .items(cellIdentifier: Constants.cellIdentifier,
-                           cellType: UITableViewCell.self)) {
-                            (_, product, cell) in
+                           cellType: UITableViewCell.self)) { (_, product, cell) in
                             cell.textLabel?.text = product.name()
             }.disposed(by: disposeBag)
 

@@ -11,6 +11,7 @@ import CoreLocation
 
 class NetworkManager {
 
+    // swiftlint:disable:next line_length
     private static let tempAccessToken = "Token MDpjY2YyMzU5Ni0xOWE0LTExZTctOWFjNy02ZmVkYzVlMTkwODg6azR2RVVOb2JLcWNEMTRGRmg0NEZiNzdFUEdXZGphR0lxSmNE"
     private static let rootURL = "https://lcboapi.com/"
 
@@ -19,7 +20,7 @@ class NetworkManager {
         var urlString = rootURL
 
         if let endpoint = endpoint {
-            urlString = urlString + endpoint
+            urlString += endpoint
         }
 
         guard let url = URL(string: urlString) else {

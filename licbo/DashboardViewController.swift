@@ -30,8 +30,7 @@ class DashboardViewController: BaseTableViewController {
                 tableView
                     .rx
                     .items(cellIdentifier: Constants.cellIdentifier,
-                           cellType: UITableViewCell.self)) {
-                            (_, item, cell) in
+                           cellType: UITableViewCell.self)) { (_, item, cell) in
                             cell.textLabel?.text = item
             }.disposed(by: disposeBag)
 
