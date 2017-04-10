@@ -12,3 +12,8 @@ test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/fastlane
     - cp fastlane/test_output/report.xml $CIRCLE_TEST_REPORTS/fastlane
+deployment:
+  production:
+    branch: beta
+    commands:
+      - bundle exec fastlane beta
