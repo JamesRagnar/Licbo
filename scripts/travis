@@ -3,10 +3,11 @@
 if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
   fastlane test
   exit $?
+else 
+  if [[ "$TRAVIS_BRANCH" == "beta" ]]; then
+  	fastlane beta
+  	exit $?
+  else
+  	fastlane test
+  fi
 fi
-
-if [[ "$TRAVIS_BRANCH" == "beta" ]]; then
-  fastlane beta
-  exit $?
-fi
-
