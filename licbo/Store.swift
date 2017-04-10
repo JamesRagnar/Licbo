@@ -10,19 +10,19 @@ import Foundation
 import CoreLocation
 
 class Store: BaseResponseObject {
-    
+
     public func name() -> String? {
         return typedValue(for: "name")
     }
-    
+
     public func latitude() -> CLLocationDegrees? {
         return typedValue(for: "latitude")
     }
-    
+
     public func longitude() -> CLLocationDegrees? {
         return typedValue(for: "longitude")
     }
-    
+
     public func coordinates() -> CLLocationCoordinate2D? {
         guard let latitude = latitude(), let longitude = longitude() else {
             return nil

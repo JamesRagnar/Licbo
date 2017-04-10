@@ -11,34 +11,34 @@ import MapKit
 import RxSwift
 
 class MapViewController: BaseViewController {
-    
+
     private lazy var mapViewModel = MapViewModel()
-    
+
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView(frame: self.view.frame)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return mapView
     }()
-    
+
     override func loadView() {
         super.loadView()
         view.addSubview(mapView)
     }
-    
+
     private var userLocationPin: MKPointAnnotation?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         mapViewModel
             .stores
             .subscribe(onNext: { [weak self] (stores) in
             self?.updateMapPins(stores)
         }).addDisposableTo(disposeBag)
-        
+
         mapViewModel.fetchStores()
     }
-    
+
     private func updateMapPins(_ stores: [Store]) {
         var annotations = [MKPointAnnotation]()
         for store in stores {

@@ -9,13 +9,13 @@
 import Foundation
 
 class BaseResponseObject {
-    
+
     private let data: [String: Any]
-    
+
     public func typedValue<T>(for key: String) -> T? {
         return data[key] as? T
     }
-    
+
     init?(_ data: [String: Any]?) {
         guard let uData = data else {
             return nil

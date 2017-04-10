@@ -14,14 +14,14 @@ protocol DashboardViewModelType {
 }
 
 class DashboardViewModel: DashboardViewModelType {
-    
+
     private let items = ["Products", "Stores"]
-    
+
     var menuItems: Observable<[String]> {
         return Observable.just(items)
     }
-    
+
     func itemSelected(_ item: String) {
-        
+
     }
 }
