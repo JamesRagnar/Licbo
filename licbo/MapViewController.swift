@@ -22,7 +22,9 @@ class MapViewController: BaseViewController {
     }()
 
     private lazy var userPin: MKPointAnnotation = {
+        [weak self] in
         let pin = MKPointAnnotation()
+        self?.mapView.addAnnotation(pin)
         return pin
     }()
 
@@ -35,8 +37,6 @@ class MapViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
 
         mapViewModel
             .stores
