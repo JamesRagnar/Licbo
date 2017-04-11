@@ -19,12 +19,11 @@ platform :ios do
     scan
   end
 
-  lane :beta do
-    increment_build_number
+  lane :beta do |options|
+    increment_build_number(build_number: options[:build_number])
     match(type: "appstore")
     sigh
-    scan
-    gym(scheme: "licbo")
-    pilot
+    gym
+    pilot(skip_waiting_for_build_processing: true)
   end
 end

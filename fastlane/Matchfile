@@ -1,4 +1,4 @@
-git_url "git@gitlab.com:JamesRagnar/licbo-match.git"
+git_url "git@github.com:JamesRagnar/Licbo-Match.git"
 
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
 
