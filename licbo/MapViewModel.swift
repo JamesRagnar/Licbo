@@ -11,6 +11,7 @@ import RxSwift
 import CoreLocation
 
 protocol MapViewModelType {
+    var userLocation: Observable<CLLocationCoordinate2D?> { get }
     var stores: Observable<[Store]> { get }
     func fetchStores()
 }
@@ -36,6 +37,14 @@ class MapViewModel {
             }).disposed(by: disposeBag)
 
         locationManager.requestUserLocation()
+    }
+
+    var userLocation: Observable<CLLocationCoordinate2D?> {
+        return locationManager
+            .location
+            .map({ (location) -> CLLocationCoordinate2D? in
+                return location?.coordinate
+            }).asObservable()
     }
 
     private func queryStores(_ location: CLLocation?) {

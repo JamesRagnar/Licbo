@@ -16,6 +16,7 @@
 		BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */; };
 		BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */; };
 		BA8DB2721E9AB7A3008BB231 /* waterloo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */; };
+		BA94C8AE1E9C6FF700D4194D /* Licences in Resources */ = {isa = PBXBuildFile; fileRef = BA94C8AD1E9C6FF700D4194D /* Licences */; };
 		BA96ABAA1E9AEE9F0012005F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */; };
 		BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */; };
@@ -56,6 +57,7 @@
 		BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+RxSwift.swift"; sourceTree = "<group>"; };
 		BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = waterloo.gpx; path = ../waterloo.gpx; sourceTree = "<group>"; };
+		BA94C8AD1E9C6FF700D4194D /* Licences */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Licences; sourceTree = "<group>"; };
 		BAA554DA1E94AC1F00F4D455 /* licbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = licbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				BAA554E41E94AC2000F4D455 /* Assets.xcassets */,
 				BAA554E61E94AC2000F4D455 /* LaunchScreen.storyboard */,
 				BAA554E91E94AC2000F4D455 /* Info.plist */,
+				BA94C8AD1E9C6FF700D4194D /* Licences */,
 			);
 			path = licbo;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				BAA554E81E94AC2000F4D455 /* LaunchScreen.storyboard in Resources */,
 				BA8DB2721E9AB7A3008BB231 /* waterloo.gpx in Resources */,
+				BA94C8AE1E9C6FF700D4194D /* Licences in Resources */,
 				BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

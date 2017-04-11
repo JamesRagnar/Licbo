@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import RxSwift
+import RxCocoa
 
 class MapViewController: BaseViewController {
 
@@ -18,6 +19,11 @@ class MapViewController: BaseViewController {
         let mapView = MKMapView(frame: self.view.frame)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return mapView
+    }()
+
+    private lazy var userPin: MKPointAnnotation = {
+        let pin = MKPointAnnotation()
+        return pin
     }()
 
     override func loadView() {
@@ -30,11 +36,21 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+
         mapViewModel
             .stores
             .subscribe(onNext: { [weak self] (stores) in
-            self?.updateMapPins(stores)
-        }).addDisposableTo(disposeBag)
+                self?.updateMapPins(stores)
+            }).addDisposableTo(disposeBag)
+
+        mapViewModel
+            .userLocation
+            .subscribe(onNext: { [weak self] (location) in
+                if let location = location {
+                    self?.userPin.coordinate = location
+                }
+            }).addDisposableTo(disposeBag)
 
         mapViewModel.fetchStores()
     }
