@@ -19,8 +19,8 @@ platform :ios do
     scan
   end
 
-  lane :beta do
-    increment_build_number build_number: $CIRCLE_BUILD_NUM
+  lane :beta do |options|
+    increment_build_number(build_number: options[:build_number])
     match(type: "appstore")
     sigh
     gym
