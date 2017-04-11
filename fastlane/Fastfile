@@ -24,6 +24,6 @@ platform :ios do
     match(type: "appstore")
     sigh
     gym
-    pilot
+    pilot(skip_waiting_for_build_processing: true)
   end
 end
