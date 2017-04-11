@@ -21,8 +21,8 @@ platform :ios do
 
   lane :beta do
     increment_build_number build_number: $CIRCLE_BUILD_NUM
-    sigh
     match(type: "appstore")
+    sigh
     gym
     pilot
   end
