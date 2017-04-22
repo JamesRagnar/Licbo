@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA06610B1EAADB5C00012372 /* StoreMapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06610A1EAADB5C00012372 /* StoreMapPointAnnotation.swift */; };
 		BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F521E95CE1D00A7CD90 /* Store.swift */; };
 		BA1A0F551E95F14F00A7CD90 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */; };
 		BA1A0F571E95F1F000A7CD90 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */; };
@@ -57,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA06610A1EAADB5C00012372 /* StoreMapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreMapPointAnnotation.swift; sourceTree = "<group>"; };
 		BA1A0F521E95CE1D00A7CD90 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 				BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */,
 				BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */,
 				BA8BF5231EAB43370078D806 /* StoreDetailViewController.swift */,
-				BA06610A1EAADB5C00012372 /* StoreMapPointAnnotation.swift */,
 				BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */,
 				BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */,
 				BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */,
@@ -353,7 +350,6 @@
 			files = (
 				BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */,
 				BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */,
-				BA06610B1EAADB5C00012372 /* StoreMapPointAnnotation.swift in Sources */,
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BA94C8B01E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift in Sources */,
 				BAC3B9401E984810003E5A92 /* ProductsViewModel.swift in Sources */,

@@ -12,10 +12,10 @@ import MapKit
 import CoreLocation
 
 protocol MapViewModelType {
-    var userLocation: Observable<CLLocationCoordinate2D?> { get }
-    var storePins: Observable<[StoreMapPointAnnotation]> { get }
+    var storePins: Variable<[Store]> { get }
     func fetchStores()
-    func storeAnnotationSelected(_ annotation: StoreMapPointAnnotation?, navigationController: UINavigationController?)
+    func storeAnnotationSelected(_ annotation: Store?)
+    func storeAnnotationDeselected(_ annotation: Store?)
 }
 
 class MapViewModel: MapViewModelType {
@@ -24,24 +24,8 @@ class MapViewModel: MapViewModelType {
     private lazy var locationManager = UserLocationManager()
     private lazy var disposeBag = DisposeBag()
 
-    var storePins: Observable<[StoreMapPointAnnotation]> {
-        return
-            cachedStores
-                .asObservable()
-                .map({ (stores) -> [StoreMapPointAnnotation] in
-                    var annotations = [StoreMapPointAnnotation]()
-                    for store in stores {
-                        if let annotation = StoreMapPointAnnotation(store) {
-                            annotations.append(annotation)
-                        }
-                    }
-                    return annotations
-                })
-    }
-    
-    var stores: Observable<[Store]> {
-        return cachedStores.asObservable()
-    }
+    var storePins = Variable<[Store]>([])
+    private var selectedAnnotation: Store?
 
     func fetchStores() {
         locationManager
@@ -56,30 +40,34 @@ class MapViewModel: MapViewModelType {
 
         locationManager.requestUserLocation()
     }
-
-    var userLocation: Observable<CLLocationCoordinate2D?> {
-        return locationManager
-            .location
-            .map({ (location) -> CLLocationCoordinate2D? in
-                print("location")
-                return location?.coordinate
-            }).asObservable()
-    }
-
+    
     private func queryStores(_ location: CLLocation?) {
         NetworkManager.getStores(withLocation: location) { [weak self] (stores) in
             print("Stores")
             self?.cachedStores.value = stores
+            self?.storePins.value = stores
         }
     }
 
-    func storeAnnotationSelected(_ annotation: StoreMapPointAnnotation?,
-                                 navigationController: UINavigationController?) {
-        guard let store = annotation?.store else {
-            print("Bad store annotation data")
+    func storeAnnotationSelected(_ annotation: Store?) {
+        guard let store = annotation else {
+            print("No selected Store data")
             return
         }
-        let storeDetailViewController = StoreDetailViewController(store)
-        navigationController?.pushViewController(storeDetailViewController, animated: true)
+        if selectedAnnotation != nil {
+            // Reset the known pins
+            storePins.value = cachedStores.value
+            selectedAnnotation = nil
+        } else {
+            // Zoom to store
+            // Show directions from user if location available
+            selectedAnnotation = store
+            storePins.value = [store]
+        }
+    }
+
+    func storeAnnotationDeselected(_ annotation: Store?) {
+        selectedAnnotation = nil
+        storePins.value = cachedStores.value
     }
 }

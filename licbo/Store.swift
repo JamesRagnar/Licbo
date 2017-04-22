@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 class Store: BaseResponseObject {
 
@@ -26,6 +27,16 @@ class Store: BaseResponseObject {
     public func coordinates() -> CLLocationCoordinate2D? {
         guard let latitude = latitude(), let longitude = longitude() else {
             return nil
+        }
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+}
+
+extension Store: MKAnnotation {
+
+    var coordinate: CLLocationCoordinate2D {
+        guard let latitude = latitude(), let longitude = longitude() else {
+            return kCLLocationCoordinate2DInvalid
         }
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }

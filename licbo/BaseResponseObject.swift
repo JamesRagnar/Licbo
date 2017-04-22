@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BaseResponseObject {
+class BaseResponseObject: NSObject {
 
     private let data: [String: Any]
 
