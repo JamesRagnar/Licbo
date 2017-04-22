@@ -17,6 +17,7 @@ protocol ProductsViewModelType {
 class ProductsViewModel: ProductsViewModelType {
 
     private lazy var data = Variable<[Product]>([])
+    private lazy var imageManager = NetworkImageManager()
 
     var products: Observable<[Product]> {
         return data.asObservable()
@@ -24,6 +25,9 @@ class ProductsViewModel: ProductsViewModelType {
 
     func fetchProducts() {
         NetworkManager.getProducts { [weak self] (items) in
+            for item in items {
+                item.imageObservable = self?.imageManager.imageObservableForURL(item.imageThumbnailUrlString)
+            }
             self?.data.value = items
         }
     }

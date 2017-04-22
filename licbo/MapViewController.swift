@@ -21,13 +21,6 @@ class MapViewController: BaseViewController {
         return mapView
     }()
 
-    private lazy var userPin: MKPointAnnotation = {
-        [weak self] in
-        let pin = MKPointAnnotation()
-        self?.mapView.addAnnotation(pin)
-        return pin
-    }()
-
     override func loadView() {
         super.loadView()
         view.addSubview(mapView)
@@ -38,33 +31,40 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mapViewModel
-            .stores
-            .subscribe(onNext: { [weak self] (stores) in
-                self?.updateMapPins(stores)
-            }).addDisposableTo(disposeBag)
+        mapView.showsUserLocation = true
 
-        mapViewModel
-            .userLocation
-            .subscribe(onNext: { [weak self] (location) in
-                if let location = location {
-                    self?.userPin.coordinate = location
-                }
-            }).addDisposableTo(disposeBag)
+        let userLocationObserver =
+            mapView
+                .rx
+                .didUpdateUserLocation
+
+        let storePinsObserver = mapViewModel.storePins
+
+        Observable.combineLatest(userLocationObserver, storePinsObserver) {
+            return ($0, $1)
+        }.subscribe(onNext: { [weak self] (location, storePins) in
+            print("Zup")
+            self?.updateMapPins(location, storePins: storePins)
+        }).addDisposableTo(disposeBag)
+
+        mapView
+            .rx
+            .didSelectAnnotationView
+            .subscribe(onNext: { (selectedAnnotation) in
+                
+        }).disposed(by: disposeBag)
 
         mapViewModel.fetchStores()
     }
 
-    private func updateMapPins(_ stores: [Store]) {
-        var annotations = [MKPointAnnotation]()
-        for store in stores {
-            if let location = store.coordinates() {
-                let pin = MKPointAnnotation()
-                pin.coordinate = location
-                annotations.append(pin)
-            }
+    private func updateMapPins(_ userlocation: MKUserLocation?, storePins: [MKPointAnnotation]?) {
+        if let storePins = storePins {
+            mapView.addAnnotations(storePins)
+            mapView.showAnnotations(storePins, animated: true)
         }
-        mapView.addAnnotations(annotations)
-        mapView.showAnnotations(annotations, animated: true)
+    }
+    
+    private func updateMapViewState() {
+        
     }
 }

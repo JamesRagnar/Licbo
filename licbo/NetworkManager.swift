@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreLocation
+import UIKit
+
+typealias NetworkResponseType = (Data?, URLResponse?, Error?) -> Swift.Void
 
 class NetworkManager {
 

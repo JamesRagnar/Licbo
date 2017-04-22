@@ -7,10 +7,22 @@
 //
 
 import Foundation
+import UIKit
+import RxSwift
 
 class Product: BaseResponseObject {
 
-    public func name() -> String? {
+    var imageObservable: Observable<UIImage?>?
+
+    var name: String? {
         return typedValue(for: "name")
+    }
+
+    var imageThumbnailUrl: URL? {
+        return typedValue(for: "image_thumb_url")
+    }
+
+    var imageThumbnailUrlString: String? {
+        return typedValue(for: "image_thumb_url")
     }
 }

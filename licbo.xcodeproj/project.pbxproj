@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA06610B1EAADB5C00012372 /* StoreMapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06610A1EAADB5C00012372 /* StoreMapPointAnnotation.swift */; };
 		BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F521E95CE1D00A7CD90 /* Store.swift */; };
 		BA1A0F551E95F14F00A7CD90 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */; };
 		BA1A0F571E95F1F000A7CD90 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */; };
 		BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FAD01E952841002E59D0 /* RxSwift.framework */; };
+		BA8BF5141EAAF1630078D806 /* PaginatedFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5131EAAF1630078D806 /* PaginatedFetchController.swift */; };
+		BA8BF5181EAAF9080078D806 /* NetworkImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */; };
+		BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */; };
+		BA8BF51C1EAAFD370078D806 /* AsynchronousNetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */; };
+		BA8BF51E1EAB0D9C0078D806 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */; };
+		BA8BF5201EAB0E780078D806 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */; };
 		BA8DB26C1E9A7EB7008BB231 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */; };
 		BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */; };
 		BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */; };
@@ -48,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA06610A1EAADB5C00012372 /* StoreMapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreMapPointAnnotation.swift; sourceTree = "<group>"; };
 		BA1A0F521E95CE1D00A7CD90 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +63,12 @@
 		BA36FACF1E952841002E59D0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BA36FAD01E952841002E59D0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		BA36FAD11E952841002E59D0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		BA8BF5131EAAF1630078D806 /* PaginatedFetchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedFetchController.swift; sourceTree = "<group>"; };
+		BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageManager.swift; sourceTree = "<group>"; };
+		BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
+		BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousNetworkOperation.swift; sourceTree = "<group>"; };
+		BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+RxSwift.swift"; sourceTree = "<group>"; };
 		BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
@@ -141,14 +155,21 @@
 				BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */,
 				BAA555031E94AE1D00F4D455 /* RootViewModel.swift */,
 				BAC3B93D1E984807003E5A92 /* ProductsViewController.swift */,
+				BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */,
+				BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */,
 				BAC3B93F1E984810003E5A92 /* ProductsViewModel.swift */,
 				BAC3B9391E984707003E5A92 /* DashboardViewController.swift */,
 				BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */,
 				BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */,
 				BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */,
+				BA06610A1EAADB5C00012372 /* StoreMapPointAnnotation.swift */,
 				BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */,
 				BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */,
 				BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */,
+				BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */,
+				BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */,
+				BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */,
+				BA8BF5131EAAF1630078D806 /* PaginatedFetchController.swift */,
 				BAC3B9711E993F0A003E5A92 /* Rx */,
 				BAA554FF1E94ACCA00F4D455 /* Product.swift */,
 				BA1A0F521E95CE1D00A7CD90 /* Store.swift */,
@@ -326,23 +347,30 @@
 			files = (
 				BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */,
 				BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */,
+				BA06610B1EAADB5C00012372 /* StoreMapPointAnnotation.swift in Sources */,
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BA94C8B01E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift in Sources */,
 				BAC3B9401E984810003E5A92 /* ProductsViewModel.swift in Sources */,
 				BAA555021E94ACCA00F4D455 /* Product.swift in Sources */,
+				BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */,
 				BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
 				BAC3B93C1E98470E003E5A92 /* DashboardViewModel.swift in Sources */,
+				BA8BF5141EAAF1630078D806 /* PaginatedFetchController.swift in Sources */,
 				BA8DB26C1E9A7EB7008BB231 /* UserLocationManager.swift in Sources */,
 				BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */,
 				BAC3B93E1E984807003E5A92 /* ProductsViewController.swift in Sources */,
 				BAA555041E94AE1D00F4D455 /* RootViewModel.swift in Sources */,
+				BA8BF5201EAB0E780078D806 /* ProductCollectionViewCell.swift in Sources */,
 				BAA555001E94ACCA00F4D455 /* BaseResponseObject.swift in Sources */,
+				BA8BF51C1EAAFD370078D806 /* AsynchronousNetworkOperation.swift in Sources */,
 				BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				BAC3B93A1E984707003E5A92 /* DashboardViewController.swift in Sources */,
 				BAC3B9701E993ED7003E5A92 /* BaseTableViewController.swift in Sources */,
+				BA8BF5181EAAF9080078D806 /* NetworkImageManager.swift in Sources */,
 				BA1A0F551E95F14F00A7CD90 /* MapViewController.swift in Sources */,
 				BA1A0F571E95F1F000A7CD90 /* MapViewModel.swift in Sources */,
+				BA8BF51E1EAB0D9C0078D806 /* BaseCollectionViewCell.swift in Sources */,
 				BA94C8B21E9C70C000D4194D /* MKMapView+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
