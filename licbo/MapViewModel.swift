@@ -15,6 +15,7 @@ protocol MapViewModelType {
     var userLocation: Observable<CLLocationCoordinate2D?> { get }
     var storePins: Observable<[StoreMapPointAnnotation]> { get }
     func fetchStores()
+    func storeAnnotationSelected(_ annotation: StoreMapPointAnnotation?, navigationController: UINavigationController?)
 }
 
 class MapViewModel: MapViewModelType {
@@ -70,5 +71,15 @@ class MapViewModel: MapViewModelType {
             print("Stores")
             self?.cachedStores.value = stores
         }
+    }
+
+    func storeAnnotationSelected(_ annotation: StoreMapPointAnnotation?,
+                                 navigationController: UINavigationController?) {
+        guard let store = annotation?.store else {
+            print("Bad store annotation data")
+            return
+        }
+        let storeDetailViewController = StoreDetailViewController(store)
+        navigationController?.pushViewController(storeDetailViewController, animated: true)
     }
 }

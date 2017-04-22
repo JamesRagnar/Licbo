@@ -20,6 +20,7 @@
 		BA8BF51E1EAB0D9C0078D806 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */; };
 		BA8BF5201EAB0E780078D806 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */; };
 		BA8BF5221EAB1DAA0078D806 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5211EAB1DAA0078D806 /* ProductDetailViewController.swift */; };
+		BA8BF5241EAB43370078D806 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5231EAB43370078D806 /* StoreDetailViewController.swift */; };
 		BA8DB26C1E9A7EB7008BB231 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */; };
 		BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */; };
 		BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */; };
@@ -71,6 +72,7 @@
 		BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA8BF5211EAB1DAA0078D806 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		BA8BF5231EAB43370078D806 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+RxSwift.swift"; sourceTree = "<group>"; };
 		BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */,
 				BA1A0F541E95F14F00A7CD90 /* MapViewController.swift */,
 				BA1A0F561E95F1F000A7CD90 /* MapViewModel.swift */,
+				BA8BF5231EAB43370078D806 /* StoreDetailViewController.swift */,
 				BA06610A1EAADB5C00012372 /* StoreMapPointAnnotation.swift */,
 				BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */,
 				BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */,
@@ -357,6 +360,7 @@
 				BAA555021E94ACCA00F4D455 /* Product.swift in Sources */,
 				BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */,
 				BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */,
+				BA8BF5241EAB43370078D806 /* StoreDetailViewController.swift in Sources */,
 				BA8BF5221EAB1DAA0078D806 /* ProductDetailViewController.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
 				BAC3B93C1E98470E003E5A92 /* DashboardViewModel.swift in Sources */,

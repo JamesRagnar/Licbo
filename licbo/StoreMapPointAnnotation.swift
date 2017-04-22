@@ -8,8 +8,11 @@
 
 import MapKit
 
-class StoreMapPointAnnotation: MKPointAnnotation {
+class StoreMapPointAnnotation: NSObject, MKAnnotation {
+
     private(set) var store: Store
+
+    public var coordinate: CLLocationCoordinate2D
 
     init?(_ store: Store?) {
         guard let uStore = store,
@@ -17,7 +20,8 @@ class StoreMapPointAnnotation: MKPointAnnotation {
             return nil
         }
         self.store = uStore
-        super.init()
         self.coordinate = coordinates
+        super.init()
     }
+
 }
