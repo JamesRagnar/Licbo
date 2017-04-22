@@ -32,6 +32,7 @@ class MapViewController: BaseViewController {
         super.viewDidLoad()
 
         mapView.showsUserLocation = true
+        mapView.delegate = self
 
         let userLocationObserver =
             mapView
@@ -81,12 +82,45 @@ class MapViewController: BaseViewController {
 
     private func updateMapPins(_ userlocation: MKUserLocation?, storePins: [Store]?) {
         if let storePins = storePins {
-            mapView.addAnnotations(storePins)
-            mapView.showAnnotations(storePins, animated: true)
+            if let userCoordinate = userlocation?.coordinate,
+                storePins.count == 1,
+                let storeLocation = storePins.first?.coordinate {
+                // Show directions to store
+                let userPlacemark = MKPlacemark(coordinate: userCoordinate)
+                let storePlacemark = MKPlacemark(coordinate: storeLocation)
+                let userMapItem = MKMapItem(placemark: userPlacemark)
+                let storeMapItem = MKMapItem(placemark: storePlacemark)
+                let request = MKDirectionsRequest()
+                request.source = userMapItem
+                request.destination = storeMapItem
+                let directions = MKDirections(request: request)
+                directions.calculate(completionHandler: { [weak self] (response, _) in
+                    DispatchQueue.main.async {
+                        if let routes = response?.routes {
+                            for route in routes {
+                                self?.mapView.add(route.polyline, level: .aboveRoads)
+                            }
+                        }
+                    }
+                })
+            }
+            var annotations: [MKAnnotation] = storePins
+            mapView.addAnnotations(annotations)
+            if let userlocation = userlocation {
+                annotations.append(userlocation)
+            }
+            mapView.showAnnotations(annotations, animated: true)
         }
     }
-    
-    private func updateMapViewState() {
-        
+}
+
+extension MapViewController: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let polyLine = overlay
+        let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
+        polyLineRenderer.strokeColor = .blue
+        polyLineRenderer.lineWidth = 6
+        return polyLineRenderer
     }
 }

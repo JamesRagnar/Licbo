@@ -23,13 +23,6 @@ class Store: BaseResponseObject {
     public func longitude() -> CLLocationDegrees? {
         return typedValue(for: "longitude")
     }
-
-    public func coordinates() -> CLLocationCoordinate2D? {
-        guard let latitude = latitude(), let longitude = longitude() else {
-            return nil
-        }
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    }
 }
 
 extension Store: MKAnnotation {
