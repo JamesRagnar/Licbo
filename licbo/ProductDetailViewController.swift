@@ -59,6 +59,7 @@ class ProductDetailViewController: BaseViewController {
 
         product
             .imageObservable?
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (image) in
                 self?.detailImageView.image = image
                 UIView.animate(withDuration: 0.3, animations: {
