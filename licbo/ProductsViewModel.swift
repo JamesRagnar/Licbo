@@ -7,32 +7,32 @@
 //
 
 import RxSwift
+import UIKit
 
 protocol ProductsViewModelType {
-    var products: Observable<[Product]> { get }
+    var products: Variable<[Product]> { get }
     func fetchProducts()
-    func selectProduct(_ product: Product)
+    func selectProduct(_ product: Product, navigationController: UINavigationController?)
 }
 
 class ProductsViewModel: ProductsViewModelType {
 
-    private lazy var data = Variable<[Product]>([])
     private lazy var imageManager = NetworkImageManager()
 
-    var products: Observable<[Product]> {
-        return data.asObservable()
-    }
+    var products: Variable<[Product]> = Variable<[Product]>([])
 
     func fetchProducts() {
         NetworkManager.getProducts { [weak self] (items) in
             for item in items {
-                item.imageObservable = self?.imageManager.imageObservableForURL(item.imageThumbnailUrlString)
+                item.thumbnailObservable = self?.imageManager.imageObservableForURL(item.imageThumbnailUrlString)
             }
-            self?.data.value = items
+            self?.products.value = items
         }
     }
 
-    func selectProduct(_ product: Product) {
-
+    func selectProduct(_ product: Product, navigationController: UINavigationController?) {
+        product.imageObservable = imageManager.imageObservableForURL(product.imageUrlString)
+        let productDetailViewController = ProductDetailViewController(product)
+        navigationController?.pushViewController(productDetailViewController, animated: true)
     }
 }

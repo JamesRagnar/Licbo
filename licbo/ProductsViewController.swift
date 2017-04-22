@@ -17,13 +17,13 @@ class ProductsViewController: BaseViewController {
     }
 
     fileprivate lazy var productsViewModel = ProductsViewModel()
-    fileprivate lazy var products = [Product]()
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 150)
+        layout.itemSize = CGSize(width: 150, height: 200)
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
         return collectionView
@@ -39,9 +39,9 @@ class ProductsViewController: BaseViewController {
 
         productsViewModel
             .products
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onNext: { (products) in
-            self.products = products
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { (_) in
             self.collectionView.reloadData()
         }).disposed(by: disposeBag)
 
@@ -53,7 +53,7 @@ extension ProductsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        return productsViewModel.products.value.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -62,7 +62,15 @@ extension ProductsViewController: UICollectionViewDataSource {
                                                             for: indexPath) as? ProductCollectionViewCell else {
             fatalError("Fucked cell ya dummy"   )
         }
-        cell.update(with: products[indexPath.row])
+        cell.update(with: productsViewModel.products.value[indexPath.row])
         return cell
+    }
+}
+
+extension ProductsViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = productsViewModel.products.value[indexPath.row]
+        productsViewModel.selectProduct(product, navigationController: navigationController)
     }
 }

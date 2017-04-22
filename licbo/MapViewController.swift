@@ -50,7 +50,7 @@ class MapViewController: BaseViewController {
         mapView
             .rx
             .didSelectAnnotationView
-            .subscribe(onNext: { (selectedAnnotation) in
+            .subscribe(onNext: { (_) in
                 
         }).disposed(by: disposeBag)
 

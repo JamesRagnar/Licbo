@@ -42,7 +42,7 @@ class ProductCollectionViewCell: BaseCollectionViewCell {
 
     func update(with product: Product) {
         textLabel.text = product.name
-        if let disposable = product.imageObservable?.bindTo(imageView.rx.image) {
+        if let disposable = product.thumbnailObservable?.bindTo(imageView.rx.image) {
             _ = disposeBag.insert(disposable)
         }
     }

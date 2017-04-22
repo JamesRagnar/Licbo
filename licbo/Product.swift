@@ -13,6 +13,7 @@ import RxSwift
 class Product: BaseResponseObject {
 
     var imageObservable: Observable<UIImage?>?
+    var thumbnailObservable: Observable<UIImage?>?
 
     var name: String? {
         return typedValue(for: "name")
@@ -24,5 +25,13 @@ class Product: BaseResponseObject {
 
     var imageThumbnailUrlString: String? {
         return typedValue(for: "image_thumb_url")
+    }
+
+    var imageUrl: URL? {
+        return typedValue(for: "image_url")
+    }
+
+    var imageUrlString: String? {
+        return typedValue(for: "image_url")
     }
 }
