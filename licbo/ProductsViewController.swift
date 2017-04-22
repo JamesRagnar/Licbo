@@ -10,39 +10,67 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ProductsViewController: BaseTableViewController {
+class ProductsViewController: BaseViewController {
 
-    private struct Constants {
+    fileprivate struct Constants {
         static let cellIdentifier = "productCell"
     }
 
-    private lazy var productsViewModel = ProductsViewModel()
+    fileprivate lazy var productsViewModel = ProductsViewModel()
+
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 150, height: 200)
+        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
+        return collectionView
+    }()
+
+    override func loadView() {
+        super.loadView()
+        view.addSubview(collectionView)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: Constants.cellIdentifier)
-
         productsViewModel
             .products
-            .bindTo(
-                tableView
-                    .rx
-                    .items(cellIdentifier: Constants.cellIdentifier,
-                           cellType: UITableViewCell.self)) { (_, product, cell) in
-                            cell.textLabel?.text = product.name()
-            }.disposed(by: disposeBag)
-
-        tableView
-            .rx
-            .modelSelected(Product.self)
-            .subscribe(onNext: { [weak self] _ in
-                self?.navigationController?.pushViewController(MapViewController(),
-                                                               animated: true)
-            })
-            .disposed(by: disposeBag)
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { (_) in
+            self.collectionView.reloadData()
+        }).disposed(by: disposeBag)
 
         productsViewModel.fetchProducts()
+    }
+}
+
+extension ProductsViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return productsViewModel.products.value.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier,
+                                                            for: indexPath) as? ProductCollectionViewCell else {
+            fatalError("Fucked cell ya dummy"   )
+        }
+        cell.update(with: productsViewModel.products.value[indexPath.row])
+        return cell
+    }
+}
+
+extension ProductsViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = productsViewModel.products.value[indexPath.row]
+        productsViewModel.selectProduct(product, navigationController: navigationController)
     }
 }

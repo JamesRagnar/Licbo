@@ -13,7 +13,6 @@ import CoreLocation
 #endif
 
 // swiftlint:disable identifier_name line_length
-
 extension Reactive where Base: CLLocationManager {
 
     /**

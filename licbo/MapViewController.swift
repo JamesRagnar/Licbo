@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import RxSwift
+import RxCocoa
 
 class MapViewController: BaseViewController {
 
@@ -30,25 +31,44 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mapViewModel
-            .stores
-            .subscribe(onNext: { [weak self] (stores) in
-            self?.updateMapPins(stores)
+        mapView.showsUserLocation = true
+
+        let userLocationObserver =
+            mapView
+                .rx
+                .didUpdateUserLocation
+
+        let storePinsObserver = mapViewModel.storePins
+
+        Observable
+            .combineLatest(userLocationObserver, storePinsObserver) {
+                return ($0, $1)
+            }.observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (location, storePins) in
+            self?.updateMapPins(location, storePins: storePins)
         }).addDisposableTo(disposeBag)
+
+        mapView
+            .rx
+            .didSelectAnnotationView
+            .map({ (view) -> StoreMapPointAnnotation? in
+                return view.annotation as? StoreMapPointAnnotation
+            })
+            .subscribe(onNext: { [weak self] (annotation) in
+                self?.mapViewModel.storeAnnotationSelected(annotation, navigationController: self?.navigationController)
+        }).disposed(by: disposeBag)
 
         mapViewModel.fetchStores()
     }
 
-    private func updateMapPins(_ stores: [Store]) {
-        var annotations = [MKPointAnnotation]()
-        for store in stores {
-            if let location = store.coordinates() {
-                let pin = MKPointAnnotation()
-                pin.coordinate = location
-                annotations.append(pin)
-            }
+    private func updateMapPins(_ userlocation: MKUserLocation?, storePins: [StoreMapPointAnnotation]?) {
+        if let storePins = storePins {
+            mapView.addAnnotations(storePins)
+            mapView.showAnnotations(storePins, animated: true)
         }
-        mapView.addAnnotations(annotations)
-        mapView.showAnnotations(annotations, animated: true)
+    }
+    
+    private func updateMapViewState() {
+        
     }
 }

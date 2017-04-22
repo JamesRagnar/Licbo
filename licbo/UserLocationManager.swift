@@ -55,7 +55,6 @@ class UserLocationManager: UserLocationManagerType {
                 guard let authorized = self?.authorized() else {
                     return
                 }
-                print("Ping")
                 if authorized {
                     self?.locationManager.requestLocation()
                 }
