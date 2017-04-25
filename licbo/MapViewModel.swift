@@ -10,10 +10,13 @@ import Foundation
 import RxSwift
 import MapKit
 import CoreLocation
+import UIKit
 
 protocol MapViewModelType {
     var storePins: Variable<[Store]> { get }
+    var edgeInsets: Variable<UIEdgeInsets> { get }
     func fetchStores()
+    func setMapPadding(_ insets: UIEdgeInsets)
     func storeAnnotationSelected(_ annotation: Store?)
     func storeAnnotationDeselected(_ annotation: Store?)
 }
@@ -25,6 +28,8 @@ class MapViewModel: MapViewModelType {
     private lazy var disposeBag = DisposeBag()
 
     var storePins = Variable<[Store]>([])
+    var edgeInsets = Variable<UIEdgeInsets>(.zero)
+
     private var selectedAnnotation: Store?
 
     func fetchStores() {
@@ -34,16 +39,18 @@ class MapViewModel: MapViewModelType {
                 guard let location = location else {
                     return
                 }
-                print("query")
                 self?.queryStores(location)
             }).disposed(by: disposeBag)
 
         locationManager.requestUserLocation()
     }
-    
+
+    func setMapPadding(_ insets: UIEdgeInsets) {
+        edgeInsets.value = insets
+    }
+
     private func queryStores(_ location: CLLocation?) {
         NetworkManager.getStores(withLocation: location) { [weak self] (stores) in
-            print("Stores")
             self?.cachedStores.value = stores
             self?.storePins.value = stores
         }

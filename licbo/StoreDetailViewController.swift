@@ -24,6 +24,6 @@ class StoreDetailViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         view.backgroundColor = .gray
-        title = store.name()
+        title = store.name
     }
 }
