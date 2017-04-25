@@ -8,27 +8,25 @@
 
 import Foundation
 import UIKit
+import GoogleMaps
+import RxSwift
 
-class FindStoresViewController: UIViewController {
+class FindStoresViewController: BaseViewController {
 
-    private lazy var mapViewController: MapViewController = {
-        let mapViewController = MapViewController(self.findStoresViewModel.mapViewModel)
-        mapViewController.view.frame = self.view.bounds
-        mapViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.findStoresViewModel.mapViewModel.setMapPadding(UIEdgeInsetsMake(0, 0, 40, 0))
-
-        return mapViewController
+    private lazy var mapView: GMSMapView = {
+        let mapView = GMSMapView()
+        mapView.frame = self.view.bounds
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return mapView
     }()
 
     private lazy var menuViewController: FindStoresMenuViewController = {
-
-        let menuViewController = FindStoresMenuViewController(self.findStoresViewModel.menuViewModel)
+        let menuViewController = FindStoresMenuViewController(self.findStoresViewModel)
         menuViewController.view.frame = CGRect(x: 0,
                                                y: self.view.frame.height - 40,
                                                width: self.view.frame.width,
                                                height: 40)
         menuViewController.view.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
-
         return menuViewController
     }()
 
@@ -45,9 +43,36 @@ class FindStoresViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        addChildViewController(mapViewController)
-        view.addSubview(mapViewController.view)
+
+        view.addSubview(mapView)
+
         addChildViewController(menuViewController)
         view.addSubview(menuViewController.view)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        findStoresViewModel
+            .viewState
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (state) in
+                self?.layoutSubviews(state)
+        }).disposed(by: disposeBag)
+    }
+
+    private func layoutSubviews(_ state: FindStoresViewControllerState) {
+        var menuFrame = CGRect.zero
+        let viewHeight = view.frame.height
+        let viewWidth = view.frame.width
+        switch state {
+        case .base:
+            menuFrame = CGRect(x: 0, y: viewHeight - 40, width: viewWidth, height: viewHeight)
+        case .search:
+            menuFrame = CGRect(x: 0, y: 64, width: viewWidth, height: viewHeight)
+        }
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.menuViewController.view.frame = menuFrame
+        }
     }
 }

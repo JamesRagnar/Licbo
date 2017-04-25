@@ -9,23 +9,31 @@
 import Foundation
 import UIKit
 
-class FindStoresMenuViewController: UIViewController {
+class FindStoresMenuViewController: BaseViewController {
 
-    private lazy var titleLabel: UILabel = {
+    private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 40)
         label.autoresizingMask = [.flexibleWidth]
         label.text = "Find a Store"
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(titleLabelTapped)))
         return label
     }()
 
-    private var findStoresMenuViewModel: FindStoresMenuViewModelType
+    private(set) lazy var textField: UITextField = {
+        let textField = UITextField()
+        textField.frame = CGRect(x: 0, y: 40, width: self.view.bounds.width, height: 40)
+        return textField
+    }()
 
-    init(_ findStoresMenuViewModel: FindStoresMenuViewModelType) {
-        self.findStoresMenuViewModel = findStoresMenuViewModel
+    private var findStoresViewModel: FindStoresViewModelType
+
+    init(_ findStoresViewModel: FindStoresViewModelType) {
+        self.findStoresViewModel = findStoresViewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,5 +44,10 @@ class FindStoresMenuViewController: UIViewController {
         view.backgroundColor = UIColor(white: 1, alpha: 0.75)
 
         view.addSubview(titleLabel)
+        view.addSubview(textField)
+    }
+
+    @objc private func titleLabelTapped() {
+        findStoresViewModel.menuLabelTapped()
     }
 }
