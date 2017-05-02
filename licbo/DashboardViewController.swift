@@ -48,7 +48,8 @@ class DashboardViewController: BaseTableViewController {
             self.navigationController?.pushViewController(ProductsViewController(),
                                                           animated: true)
         } else if title == "Stores" {
-            self.navigationController?.pushViewController(MapViewController(),
+            let findStoresViewModel = FindStoresViewModel()
+            self.navigationController?.pushViewController(FindStoresViewController(findStoresViewModel),
                                                           animated: true)
         }
     }
