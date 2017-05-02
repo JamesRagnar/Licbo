@@ -26,6 +26,7 @@
 		BA94C8B01E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94C8AF1E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift */; };
 		BA94C8B21E9C70C000D4194D /* MKMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94C8B11E9C70C000D4194D /* MKMapView+Rx.swift */; };
 		BA96ABAA1E9AEE9F0012005F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
+		BAA511901EB2D96000804BD0 /* RxCocoa+licbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA5118F1EB2D96000804BD0 /* RxCocoa+licbo.swift */; };
 		BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */; };
 		BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */; };
 		BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA554E41E94AC2000F4D455 /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		BA94C8AD1E9C6FF700D4194D /* Licences */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Licences; sourceTree = "<group>"; };
 		BA94C8AF1E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMKMapViewDelegateProxy.swift; sourceTree = "<group>"; };
 		BA94C8B11E9C70C000D4194D /* MKMapView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
+		BAA5118F1EB2D96000804BD0 /* RxCocoa+licbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxCocoa+licbo.swift"; sourceTree = "<group>"; };
 		BAA554DA1E94AC1F00F4D455 /* licbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = licbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */,
 				BA94C8AF1E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift */,
 				BA94C8B11E9C70C000D4194D /* MKMapView+Rx.swift */,
+				BAA5118F1EB2D96000804BD0 /* RxCocoa+licbo.swift */,
 			);
 			name = Rx;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */,
 				BAF2DC9D1EAD89AB00F21B17 /* FindStoresViewModel.swift in Sources */,
 				BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */,
+				BAA511901EB2D96000804BD0 /* RxCocoa+licbo.swift in Sources */,
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BA94C8B01E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift in Sources */,
 				BAC3B9401E984810003E5A92 /* ProductsViewModel.swift in Sources */,

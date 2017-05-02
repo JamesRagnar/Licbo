@@ -25,7 +25,7 @@ class FindStoresViewController: BaseViewController {
         menuViewController.view.frame = CGRect(x: 0,
                                                y: self.view.frame.height - 40,
                                                width: self.view.frame.width,
-                                               height: 40)
+                                               height: self.view.frame.height)
         menuViewController.view.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
         return menuViewController
     }()
@@ -53,26 +53,34 @@ class FindStoresViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        findStoresViewModel
-            .viewState
+        Observable
+            .combineLatest(findStoresViewModel.viewState, BaseViewController.keyboardObserver())
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] (state) in
-                self?.layoutSubviews(state)
+            .subscribe(onNext: { [weak self] (state, keyboard) in
+                self?.layoutSubviews(state, keyboard: keyboard)
         }).disposed(by: disposeBag)
     }
 
-    private func layoutSubviews(_ state: FindStoresViewControllerState) {
+    private func layoutSubviews(_ state: FindStoresViewControllerState, keyboard: KeyboardUpdateTuple) {
         var menuFrame = CGRect.zero
         let viewHeight = view.frame.height
         let viewWidth = view.frame.width
         switch state {
         case .base:
+            menuViewController.textField.resignFirstResponder()
             menuFrame = CGRect(x: 0, y: viewHeight - 40, width: viewWidth, height: viewHeight)
         case .search:
-            menuFrame = CGRect(x: 0, y: 64, width: viewWidth, height: viewHeight)
+            menuViewController.textField.becomeFirstResponder()
+            menuFrame = CGRect(x: 0, y: 64, width: viewWidth, height: viewHeight - 64 - keyboard.height)
         }
-        UIView.animate(withDuration: 0.2) { [weak self] in
+        UIView.animate(withDuration: keyboard.animationDuration == 0 ? 0.3 : keyboard.animationDuration,
+                       delay: 0,
+                       options: keyboard.animationCurve,
+                       animations: { [weak self] in
             self?.menuViewController.view.frame = menuFrame
-        }
+        }, completion: nil)
     }
 }
+
+
+
