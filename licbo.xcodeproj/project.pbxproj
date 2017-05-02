@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F521E95CE1D00A7CD90 /* Store.swift */; };
 		BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FAD01E952841002E59D0 /* RxSwift.framework */; };
 		BA8BF5181EAAF9080078D806 /* NetworkImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */; };
@@ -57,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA1A0F521E95CE1D00A7CD90 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BA36FACE1E952841002E59D0 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		BA36FACF1E952841002E59D0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BA36FAD01E952841002E59D0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */,
 				BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */,
 				BAC3B9711E993F0A003E5A92 /* Rx */,
-				BA1A0F521E95CE1D00A7CD90 /* Store.swift */,
 				BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */,
 				BAA554E41E94AC2000F4D455 /* Assets.xcassets */,
 				BAA554E61E94AC2000F4D455 /* LaunchScreen.storyboard */,
@@ -368,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */,
 				BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */,
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */,
