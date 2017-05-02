@@ -17,6 +17,7 @@
 		BA96ABAA1E9AEE9F0012005F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA9F16181EB826E7001C4E30 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9F16171EB826E7001C4E30 /* CoreDataManager.swift */; };
 		BA9F161B1EB82716001C4E30 /* LCBODataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA9F16191EB82716001C4E30 /* LCBODataModel.xcdatamodeld */; };
+		BA9F16441EB8C4A7001C4E30 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9F16431EB8C4A7001C4E30 /* Store.swift */; };
 		BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */; };
 		BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */; };
 		BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA554E41E94AC2000F4D455 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		BA94C8AD1E9C6FF700D4194D /* Licences */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Licences; sourceTree = "<group>"; };
 		BA9F16171EB826E7001C4E30 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BA9F161A1EB82716001C4E30 /* LCBODataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LCBODataModel.xcdatamodel; sourceTree = "<group>"; };
+		BA9F16431EB8C4A7001C4E30 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BAA554DA1E94AC1F00F4D455 /* licbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = licbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */,
 				BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */,
 				BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */,
+				BA9F16431EB8C4A7001C4E30 /* Store.swift */,
 				BAC3B9711E993F0A003E5A92 /* Rx */,
 				BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */,
 				BAA554E41E94AC2000F4D455 /* Assets.xcassets */,
@@ -368,6 +371,7 @@
 				BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */,
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */,
+				BA9F16441EB8C4A7001C4E30 /* Store.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
 				BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */,
 				BA9F16181EB826E7001C4E30 /* CoreDataManager.swift in Sources */,

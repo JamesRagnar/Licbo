@@ -13,6 +13,8 @@ class RootViewController: BaseViewController {
 
     private var viewModel: RootViewModelType
 
+    private lazy var coreManager = CoreDataManager()
+
     init(_ viewModel: RootViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +29,6 @@ class RootViewController: BaseViewController {
 
         view.backgroundColor = .gray
 
-        let coreManger = CoreDataManager()
-        _ = coreManger.persistentContainer
+        
     }
 }
