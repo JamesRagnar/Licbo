@@ -25,8 +25,6 @@
 		BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */; };
 		BAA555021E94ACCA00F4D455 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554FF1E94ACCA00F4D455 /* Product.swift */; };
 		BAA555041E94AE1D00F4D455 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA555031E94AE1D00F4D455 /* RootViewModel.swift */; };
-		BAC3B93A1E984707003E5A92 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B9391E984707003E5A92 /* DashboardViewController.swift */; };
-		BAC3B93C1E98470E003E5A92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */; };
 		BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B96D1E993ED0003E5A92 /* BaseViewController.swift */; };
 		BAC3B9701E993ED7003E5A92 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B96F1E993ED7003E5A92 /* BaseTableViewController.swift */; };
 		BAF2DC771EAD38C100F21B17 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF2DC741EAD38C100F21B17 /* GoogleMaps.framework */; };
@@ -82,8 +80,6 @@
 		BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BAA554FF1E94ACCA00F4D455 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BAA555031E94AE1D00F4D455 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
-		BAC3B9391E984707003E5A92 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		BAC3B96D1E993ED0003E5A92 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BAC3B96F1E993ED7003E5A92 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		BAF2DC741EAD38C100F21B17 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Dependencies/GoogleMaps-2.2.0/GoogleMaps.framework"; sourceTree = "<group>"; };
@@ -195,8 +191,6 @@
 				BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */,
 				BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */,
 				BAA555031E94AE1D00F4D455 /* RootViewModel.swift */,
-				BAC3B9391E984707003E5A92 /* DashboardViewController.swift */,
-				BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */,
 				BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */,
 				BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */,
 				BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */,
@@ -380,12 +374,10 @@
 				BAA555021E94ACCA00F4D455 /* Product.swift in Sources */,
 				BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
-				BAC3B93C1E98470E003E5A92 /* DashboardViewModel.swift in Sources */,
 				BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */,
 				BAA555041E94AE1D00F4D455 /* RootViewModel.swift in Sources */,
 				BAA555001E94ACCA00F4D455 /* BaseResponseObject.swift in Sources */,
 				BA8BF51C1EAAFD370078D806 /* AsynchronousNetworkOperation.swift in Sources */,
-				BAC3B93A1E984707003E5A92 /* DashboardViewController.swift in Sources */,
 				BAC3B9701E993ED7003E5A92 /* BaseTableViewController.swift in Sources */,
 				BA8BF5181EAAF9080078D806 /* NetworkImageManager.swift in Sources */,
 			);

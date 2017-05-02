@@ -8,14 +8,10 @@
 
 import RxSwift
 
-enum RootViewControllerState {
-    case dashboard
-}
-
 protocol RootViewModelType {
-    var state: Variable<RootViewControllerState> { get }
+
 }
 
 class RootViewModel: RootViewModelType {
-    var state = Variable<RootViewControllerState>(.dashboard)
+
 }

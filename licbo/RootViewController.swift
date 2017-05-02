@@ -11,11 +11,6 @@ import RxSwift
 
 class RootViewController: BaseViewController {
 
-    private lazy var navController: UINavigationController = {
-        let navController = UINavigationController()
-        return navController
-    }()
-
     private var viewModel: RootViewModelType
 
     init(_ viewModel: RootViewModelType) {
@@ -29,26 +24,7 @@ class RootViewController: BaseViewController {
 
     override func loadView() {
         super.loadView()
-        addChildViewController(navController)
-        view.addSubview(navController.view)
-    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        viewModel
-            .state
-            .asObservable()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] (state) in
-                self?.setViewControllerState(state)
-            }).disposed(by: disposeBag)
-    }
-
-    private func setViewControllerState(_ state: RootViewControllerState) {
-        switch state {
-        case .dashboard:
-            navController.viewControllers = [DashboardViewController()]
-        }
+        view.backgroundColor = .gray
     }
 }
