@@ -18,8 +18,8 @@ class BaseViewController: UIViewController {
     static func keyboardObserver() -> Observable<KeyboardUpdateTuple> {
         return Observable
             .from([
-                NotificationCenter.default.rx.notification(NSNotification.Name.UIKeyboardWillShow),
-                NotificationCenter.default.rx.notification(NSNotification.Name.UIKeyboardWillHide)
+                NotificationCenter.default.rx.notification(.UIKeyboardWillShow),
+                NotificationCenter.default.rx.notification(.UIKeyboardWillHide)
                 ])
             .merge()
             .map({ (notification) -> KeyboardUpdateTuple in

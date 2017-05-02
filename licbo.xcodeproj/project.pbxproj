@@ -10,23 +10,12 @@
 		BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A0F521E95CE1D00A7CD90 /* Store.swift */; };
 		BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FAD01E952841002E59D0 /* RxSwift.framework */; };
-		BA8BF5141EAAF1630078D806 /* PaginatedFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5131EAAF1630078D806 /* PaginatedFetchController.swift */; };
 		BA8BF5181EAAF9080078D806 /* NetworkImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */; };
 		BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */; };
 		BA8BF51C1EAAFD370078D806 /* AsynchronousNetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */; };
-		BA8BF51E1EAB0D9C0078D806 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */; };
-		BA8BF5201EAB0E780078D806 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */; };
-		BA8BF5221EAB1DAA0078D806 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5211EAB1DAA0078D806 /* ProductDetailViewController.swift */; };
-		BA8BF5241EAB43370078D806 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5231EAB43370078D806 /* StoreDetailViewController.swift */; };
-		BA8DB26C1E9A7EB7008BB231 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */; };
-		BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */; };
-		BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */; };
 		BA8DB2721E9AB7A3008BB231 /* waterloo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */; };
 		BA94C8AE1E9C6FF700D4194D /* Licences in Resources */ = {isa = PBXBuildFile; fileRef = BA94C8AD1E9C6FF700D4194D /* Licences */; };
-		BA94C8B01E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94C8AF1E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift */; };
-		BA94C8B21E9C70C000D4194D /* MKMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94C8B11E9C70C000D4194D /* MKMapView+Rx.swift */; };
 		BA96ABAA1E9AEE9F0012005F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
-		BAA511901EB2D96000804BD0 /* RxCocoa+licbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA5118F1EB2D96000804BD0 /* RxCocoa+licbo.swift */; };
 		BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */; };
 		BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */; };
 		BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA554E41E94AC2000F4D455 /* Assets.xcassets */; };
@@ -38,8 +27,6 @@
 		BAA555041E94AE1D00F4D455 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA555031E94AE1D00F4D455 /* RootViewModel.swift */; };
 		BAC3B93A1E984707003E5A92 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B9391E984707003E5A92 /* DashboardViewController.swift */; };
 		BAC3B93C1E98470E003E5A92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */; };
-		BAC3B93E1E984807003E5A92 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B93D1E984807003E5A92 /* ProductsViewController.swift */; };
-		BAC3B9401E984810003E5A92 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B93F1E984810003E5A92 /* ProductsViewModel.swift */; };
 		BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B96D1E993ED0003E5A92 /* BaseViewController.swift */; };
 		BAC3B9701E993ED7003E5A92 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3B96F1E993ED7003E5A92 /* BaseTableViewController.swift */; };
 		BAF2DC771EAD38C100F21B17 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF2DC741EAD38C100F21B17 /* GoogleMaps.framework */; };
@@ -59,9 +46,6 @@
 		BAF2DC911EAD397500F21B17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF2DC901EAD397500F21B17 /* SystemConfiguration.framework */; };
 		BAF2DC931EAD397900F21B17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF2DC921EAD397900F21B17 /* UIKit.framework */; };
 		BAF2DC951EAD3AC400F21B17 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAF2DC941EAD3AC400F21B17 /* GoogleMaps.bundle */; };
-		BAF2DC971EAD7E7200F21B17 /* FindStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DC961EAD7E7200F21B17 /* FindStoresViewController.swift */; };
-		BAF2DC991EAD818700F21B17 /* FindStoresMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DC981EAD818700F21B17 /* FindStoresMenuViewController.swift */; };
-		BAF2DC9D1EAD89AB00F21B17 /* FindStoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DC9C1EAD89AB00F21B17 /* FindStoresViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,22 +64,11 @@
 		BA36FACF1E952841002E59D0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BA36FAD01E952841002E59D0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		BA36FAD11E952841002E59D0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		BA8BF5131EAAF1630078D806 /* PaginatedFetchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedFetchController.swift; sourceTree = "<group>"; };
 		BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageManager.swift; sourceTree = "<group>"; };
 		BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousNetworkOperation.swift; sourceTree = "<group>"; };
-		BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
-		BA8BF5211EAB1DAA0078D806 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
-		BA8BF5231EAB43370078D806 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
-		BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
-		BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+RxSwift.swift"; sourceTree = "<group>"; };
-		BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = waterloo.gpx; path = ../waterloo.gpx; sourceTree = "<group>"; };
 		BA94C8AD1E9C6FF700D4194D /* Licences */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Licences; sourceTree = "<group>"; };
-		BA94C8AF1E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMKMapViewDelegateProxy.swift; sourceTree = "<group>"; };
-		BA94C8B11E9C70C000D4194D /* MKMapView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
-		BAA5118F1EB2D96000804BD0 /* RxCocoa+licbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxCocoa+licbo.swift"; sourceTree = "<group>"; };
 		BAA554DA1E94AC1F00F4D455 /* licbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = licbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +84,6 @@
 		BAA555031E94AE1D00F4D455 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		BAC3B9391E984707003E5A92 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		BAC3B93D1E984807003E5A92 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
-		BAC3B93F1E984810003E5A92 /* ProductsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		BAC3B96D1E993ED0003E5A92 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BAC3B96F1E993ED7003E5A92 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		BAF2DC741EAD38C100F21B17 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Dependencies/GoogleMaps-2.2.0/GoogleMaps.framework"; sourceTree = "<group>"; };
@@ -132,9 +103,6 @@
 		BAF2DC901EAD397500F21B17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BAF2DC921EAD397900F21B17 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAF2DC941EAD3AC400F21B17 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Dependencies/GoogleMaps-2.2.0/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
-		BAF2DC961EAD7E7200F21B17 /* FindStoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindStoresViewController.swift; sourceTree = "<group>"; };
-		BAF2DC981EAD818700F21B17 /* FindStoresMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindStoresMenuViewController.swift; sourceTree = "<group>"; };
-		BAF2DC9C1EAD89AB00F21B17 /* FindStoresViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindStoresViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,24 +195,13 @@
 				BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */,
 				BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */,
 				BAA555031E94AE1D00F4D455 /* RootViewModel.swift */,
-				BAC3B93D1E984807003E5A92 /* ProductsViewController.swift */,
-				BA8BF51F1EAB0E780078D806 /* ProductCollectionViewCell.swift */,
-				BA8BF51D1EAB0D9C0078D806 /* BaseCollectionViewCell.swift */,
-				BAC3B93F1E984810003E5A92 /* ProductsViewModel.swift */,
-				BA8BF5211EAB1DAA0078D806 /* ProductDetailViewController.swift */,
 				BAC3B9391E984707003E5A92 /* DashboardViewController.swift */,
 				BAC3B93B1E98470E003E5A92 /* DashboardViewModel.swift */,
-				BAF2DC961EAD7E7200F21B17 /* FindStoresViewController.swift */,
-				BAF2DC9C1EAD89AB00F21B17 /* FindStoresViewModel.swift */,
-				BAF2DC981EAD818700F21B17 /* FindStoresMenuViewController.swift */,
-				BA8BF5231EAB43370078D806 /* StoreDetailViewController.swift */,
-				BA8DB26B1E9A7EB7008BB231 /* UserLocationManager.swift */,
 				BAA554FD1E94ACCA00F4D455 /* BaseResponseObject.swift */,
 				BAA554FE1E94ACCA00F4D455 /* NetworkManager.swift */,
 				BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */,
 				BA8BF5191EAAFCC50078D806 /* AsynchronousOperation.swift */,
 				BA8BF51B1EAAFD370078D806 /* AsynchronousNetworkOperation.swift */,
-				BA8BF5131EAAF1630078D806 /* PaginatedFetchController.swift */,
 				BAC3B9711E993F0A003E5A92 /* Rx */,
 				BAA554FF1E94ACCA00F4D455 /* Product.swift */,
 				BA1A0F521E95CE1D00A7CD90 /* Store.swift */,
@@ -271,11 +228,6 @@
 			children = (
 				BAC3B96D1E993ED0003E5A92 /* BaseViewController.swift */,
 				BAC3B96F1E993ED7003E5A92 /* BaseTableViewController.swift */,
-				BA8DB26D1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift */,
-				BA8DB26F1E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift */,
-				BA94C8AF1E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift */,
-				BA94C8B11E9C70C000D4194D /* MKMapView+Rx.swift */,
-				BAA5118F1EB2D96000804BD0 /* RxCocoa+licbo.swift */,
 			);
 			name = Rx;
 			sourceTree = "<group>";
@@ -423,35 +375,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA1A0F531E95CE1D00A7CD90 /* Store.swift in Sources */,
-				BAF2DC9D1EAD89AB00F21B17 /* FindStoresViewModel.swift in Sources */,
 				BAA555011E94ACCA00F4D455 /* NetworkManager.swift in Sources */,
-				BAA511901EB2D96000804BD0 /* RxCocoa+licbo.swift in Sources */,
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
-				BA94C8B01E9C70B000D4194D /* RxMKMapViewDelegateProxy.swift in Sources */,
-				BAC3B9401E984810003E5A92 /* ProductsViewModel.swift in Sources */,
 				BAA555021E94ACCA00F4D455 /* Product.swift in Sources */,
 				BA8BF51A1EAAFCC50078D806 /* AsynchronousOperation.swift in Sources */,
-				BA8DB26E1E9A90FC008BB231 /* CLLocationManager+RxSwift.swift in Sources */,
-				BA8BF5241EAB43370078D806 /* StoreDetailViewController.swift in Sources */,
-				BA8BF5221EAB1DAA0078D806 /* ProductDetailViewController.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
 				BAC3B93C1E98470E003E5A92 /* DashboardViewModel.swift in Sources */,
-				BA8BF5141EAAF1630078D806 /* PaginatedFetchController.swift in Sources */,
-				BA8DB26C1E9A7EB7008BB231 /* UserLocationManager.swift in Sources */,
 				BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */,
-				BAC3B93E1E984807003E5A92 /* ProductsViewController.swift in Sources */,
 				BAA555041E94AE1D00F4D455 /* RootViewModel.swift in Sources */,
-				BA8BF5201EAB0E780078D806 /* ProductCollectionViewCell.swift in Sources */,
-				BAF2DC991EAD818700F21B17 /* FindStoresMenuViewController.swift in Sources */,
 				BAA555001E94ACCA00F4D455 /* BaseResponseObject.swift in Sources */,
 				BA8BF51C1EAAFD370078D806 /* AsynchronousNetworkOperation.swift in Sources */,
-				BA8DB2701E9A9123008BB231 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				BAC3B93A1E984707003E5A92 /* DashboardViewController.swift in Sources */,
 				BAC3B9701E993ED7003E5A92 /* BaseTableViewController.swift in Sources */,
 				BA8BF5181EAAF9080078D806 /* NetworkImageManager.swift in Sources */,
-				BA8BF51E1EAB0D9C0078D806 /* BaseCollectionViewCell.swift in Sources */,
-				BAF2DC971EAD7E7200F21B17 /* FindStoresViewController.swift in Sources */,
-				BA94C8B21E9C70C000D4194D /* MKMapView+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
