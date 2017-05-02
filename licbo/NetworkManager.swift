@@ -69,30 +69,10 @@ class NetworkManager {
             var responseData = [Store]()
             if let stores = data?["result"] as? [[String: Any]] {
                 for storeData in stores {
-                    if let newStore = Store(storeData) {
-                        responseData.append(newStore)
-                    }
+
                 }
             }
             result(responseData)
         }
-    }
-
-    public static func getProducts(_ result: @escaping ([Product]) -> Void) {
-        get("products") { (data) in
-            var responseData = [Product]()
-            if let products = data?["result"] as? [[String: Any]] {
-                for productData in products {
-                    if let newProduct = Product(productData) {
-                        responseData.append(newProduct)
-                    }
-                }
-            }
-            result(responseData)
-        }
-    }
-
-    public static func getInventories() {
-
     }
 }

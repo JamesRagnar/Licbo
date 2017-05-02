@@ -26,5 +26,8 @@ class RootViewController: BaseViewController {
         super.loadView()
 
         view.backgroundColor = .gray
+
+        let coreManger = CoreDataManager()
+        _ = coreManger.persistentContainer
     }
 }

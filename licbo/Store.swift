@@ -9,25 +9,8 @@
 import Foundation
 import CoreLocation
 import MapKit
+import CoreData
 
-class Store: BaseResponseObject {
-
-    var name: String? {
-        return typedValue(for: "name")
-    }
-
-    var latitude: CLLocationDegrees? {
-        return typedValue(for: "latitude")
-    }
-
-    var longitude: CLLocationDegrees? {
-        return typedValue(for: "longitude")
-    }
-
-    var coordinate: CLLocationCoordinate2D {
-        guard let latitude = latitude, let longitude = longitude else {
-            return kCLLocationCoordinate2DInvalid
-        }
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    }
-}
+//class Store: NSManagedObject {
+//
+//}
