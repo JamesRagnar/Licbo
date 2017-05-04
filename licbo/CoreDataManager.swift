@@ -11,6 +11,8 @@ import CoreData
 
 class CoreDataManager: NSObject {
 
+    public static var sharedIntance = CoreDataManager()
+
 //    var managedObjectContext: NSManagedObjectContext
 
     lazy var persistentContainer: NSPersistentContainer = {

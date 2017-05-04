@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import UIKit
+import CoreData
 
 typealias NetworkResponseType = (Data?, URLResponse?, Error?) -> Swift.Void
 
@@ -58,6 +59,25 @@ class NetworkManager {
 
     public static func getStores(withLocation location: CLLocation? = nil, result: @escaping ([Store]) -> Void) {
 
+        var responseData = [Store]()
+
+        let managedContext = CoreDataManager.sharedIntance.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Store")
+
+        do {
+            if let resultStores = try managedContext.fetch(fetchRequest) as? [Store] {
+                responseData = resultStores
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+
+        if responseData.count != 0 {
+            result(responseData)
+            return
+        }
+
         var endpoint = "stores"
 
         if let latitude = location?.coordinate.latitude.description,
@@ -66,10 +86,20 @@ class NetworkManager {
         }
 
         get(endpoint) { (data) in
-            var responseData = [Store]()
             if let stores = data?["result"] as? [[String: Any]] {
                 for storeData in stores {
 
+                    let entity = NSEntityDescription.entity(forEntityName: "Store", in: managedContext)!
+                    if let store = Store(entity: entity, insertInto: managedContext, data: storeData) {
+                        responseData.append(store)
+                    }
+                }
+
+                // 4
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
                 }
             }
             result(responseData)
