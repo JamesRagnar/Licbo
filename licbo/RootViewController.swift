@@ -45,7 +45,8 @@ class RootViewController: BaseTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = "text"
+        let store = stores[indexPath.row]
+        cell.textLabel?.text = store.name
         return cell
     }
 }

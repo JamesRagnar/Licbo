@@ -90,9 +90,9 @@ class NetworkManager {
                 for storeData in stores {
 
                     let entity = NSEntityDescription.entity(forEntityName: "Store", in: managedContext)!
-                    if let store = Store(entity: entity, insertInto: managedContext, data: storeData) {
-                        responseData.append(store)
-                    }
+                    let store = Store(entity: entity, insertInto: managedContext)
+                    store.loadData(from: storeData)
+                    responseData.append(store)
                 }
 
                 // 4
