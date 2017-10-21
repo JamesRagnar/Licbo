@@ -9,18 +9,20 @@ jobs:
     steps:
       - checkout
 
-      - run: bundle install
+      - run: 
+          name: Bundler
+          command: bundle install --path vendor/bundle
 
       - run:
           name: Setup
           command: bundle exec fastlane setup
 
+      - save_cache:
+          key: {{ .Branch }}
+          paths:
+            - Carthage
+            - vendor/bundle
+
       - run:
           name: Test
           command: bundle exec fastlane test
-
-workflows:
-  version: 2
-  test:
-    jobs:
-      - test
