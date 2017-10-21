@@ -1,3 +1,4 @@
 scheme "licbo"
+workspace "licbo.xcworkspace"
 clean true
 skip_build true
