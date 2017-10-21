@@ -18,9 +18,11 @@ jobs:
           command: bundle install --path vendor/bundle
 
       - run:
-          name: Setup
-          command: bundle exec fastlane setup
-
+          name: Install CocoaPods
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+            pod install --verbose
+          
       - save_cache:
           key: v1-{{ .Branch }}
           paths:
