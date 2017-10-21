@@ -522,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ce60a4ac-089a-45d8-bc93-6d494f17efc5";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development app.ragnar.licbo";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -546,7 +546,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7ee93f94-0ad7-4eb5-a5df-5bc1160f9372";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore app.ragnar.licbo";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -566,7 +566,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ragnar.licboTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/licbo.app/licbo";
 			};
@@ -586,7 +586,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ragnar.licboTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/licbo.app/licbo";
 			};
