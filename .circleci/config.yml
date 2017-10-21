@@ -24,13 +24,13 @@ jobs:
       - save_cache:
           key: v1-{{ .Branch }}
           paths:
-            - Carthage
+            - Pods
             - vendor/bundle
 
       - run:
           name: Test
           command: bundle exec fastlane test
-          
+
 workflows:
   version: 2
   test:

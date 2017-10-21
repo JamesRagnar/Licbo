@@ -1,4 +1,0 @@
-excluded:
-  - Carthage
-trailing_whitespace:
-  ignores_empty_lines: true
