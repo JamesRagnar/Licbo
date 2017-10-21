@@ -9,6 +9,8 @@ jobs:
     steps:
       - checkout
 
+      - run: bundle install
+
       - run:
           name: Setup
           command: bundle exec fastlane setup
