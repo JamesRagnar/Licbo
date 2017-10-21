@@ -233,11 +233,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAA554F71E94AC2000F4D455 /* Build configuration list for PBXNativeTarget "licbo" */;
 			buildPhases = (
+				BA36FAD61E952846002E59D0 /* Carthage */,
 				BAA554D61E94AC1F00F4D455 /* Sources */,
 				BAA554D71E94AC1F00F4D455 /* Frameworks */,
 				BAA554D81E94AC1F00F4D455 /* Resources */,
-				BA36FAD61E952846002E59D0 /* Carthage */,
-				BA96ABAB1E9B29F00012005F /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -346,20 +345,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		BA96ABAB1E9B29F00012005F /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

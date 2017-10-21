@@ -10,4 +10,3 @@ if ! cmp -s Cartfile.resolved Carthage/Cartfile.resolved; then
 else
   echo "Carthage Dependencies Satisfied"
 fi
-
