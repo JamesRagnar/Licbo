@@ -14,7 +14,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-{{ .Branch }}
+            - v2-{{ .Branch }}
 
       - run: 
           name: Bundler
@@ -27,7 +27,7 @@ jobs:
             pod install --verbose
 
       - save_cache:
-          key: v1-{{ .Branch }}
+          key: v2-{{ .Branch }}
           paths:
             - Pods
             - vendor/bundle
