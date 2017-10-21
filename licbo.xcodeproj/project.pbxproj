@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721232A8620C5C6B50092143 /* Pods_licbo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B333E308B107CBCE355381 /* Pods_licbo.framework */; };
 		BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FAD01E952841002E59D0 /* RxSwift.framework */; };
 		BA8BF5181EAAF9080078D806 /* NetworkImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5171EAAF9080078D806 /* NetworkImageManager.swift */; };
@@ -43,7 +44,6 @@
 		BAF2DC8F1EAD396B00F21B17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF2DC8E1EAD396B00F21B17 /* QuartzCore.framework */; };
 		BAF2DC911EAD397500F21B17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF2DC901EAD397500F21B17 /* SystemConfiguration.framework */; };
 		BAF2DC931EAD397900F21B17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF2DC921EAD397900F21B17 /* UIKit.framework */; };
-		BAF2DC951EAD3AC400F21B17 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAF2DC941EAD3AC400F21B17 /* GoogleMaps.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ECB8D745F56319B79866FCE /* Pods-licbo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-licbo.release.xcconfig"; path = "Pods/Target Support Files/Pods-licbo/Pods-licbo.release.xcconfig"; sourceTree = "<group>"; };
+		67AE9A469BFE2F9932C3228E /* Pods-licbo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-licbo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-licbo/Pods-licbo.debug.xcconfig"; sourceTree = "<group>"; };
 		BA36FACE1E952841002E59D0 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		BA36FACF1E952841002E59D0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BA36FAD01E952841002E59D0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		BAF2DC901EAD397500F21B17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BAF2DC921EAD397900F21B17 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAF2DC941EAD3AC400F21B17 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Dependencies/GoogleMaps-2.2.0/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
+		F9B333E308B107CBCE355381 /* Pods_licbo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_licbo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 				BAF2DC791EAD38C100F21B17 /* GoogleMapsCore.framework in Frameworks */,
 				BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */,
 				BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */,
+				721232A8620C5C6B50092143 /* Pods_licbo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5A35D3217C1B352C83FCE51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67AE9A469BFE2F9932C3228E /* Pods-licbo.debug.xcconfig */,
+				0ECB8D745F56319B79866FCE /* Pods-licbo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BA36FACD1E952841002E59D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +175,7 @@
 				BA36FACF1E952841002E59D0 /* RxCocoa.framework */,
 				BA36FAD01E952841002E59D0 /* RxSwift.framework */,
 				BA36FAD11E952841002E59D0 /* RxTest.framework */,
+				F9B333E308B107CBCE355381 /* Pods_licbo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +187,7 @@
 				BAA554F11E94AC2000F4D455 /* licboTests */,
 				BAA554DB1E94AC1F00F4D455 /* Products */,
 				BA36FACD1E952841002E59D0 /* Frameworks */,
+				A5A35D3217C1B352C83FCE51 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,9 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAA554F71E94AC2000F4D455 /* Build configuration list for PBXNativeTarget "licbo" */;
 			buildPhases = (
+				385F437D7538B5D81B468B2F /* [CP] Check Pods Manifest.lock */,
 				BAA554D61E94AC1F00F4D455 /* Sources */,
 				BAA554D71E94AC1F00F4D455 /* Frameworks */,
 				BAA554D81E94AC1F00F4D455 /* Resources */,
+				EE317CE8AEAD4740AB581A66 /* [CP] Embed Pods Frameworks */,
+				DF5A745CA1AD00903C0C18C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,7 +335,6 @@
 				BA8DB2721E9AB7A3008BB231 /* waterloo.gpx in Resources */,
 				BA94C8AE1E9C6FF700D4194D /* Licences in Resources */,
 				BAA554E51E94AC2000F4D455 /* Assets.xcassets in Resources */,
-				BAF2DC951EAD3AC400F21B17 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +346,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		385F437D7538B5D81B468B2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF5A745CA1AD00903C0C18C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-licbo/Pods-licbo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE317CE8AEAD4740AB581A66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-licbo/Pods-licbo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BAA554D61E94AC1F00F4D455 /* Sources */ = {
@@ -487,6 +552,7 @@
 		};
 		BAA554F81E94AC2000F4D455 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67AE9A469BFE2F9932C3228E /* Pods-licbo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 3;
@@ -510,6 +576,7 @@
 		};
 		BAA554F91E94AC2000F4D455 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ECB8D745F56319B79866FCE /* Pods-licbo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
