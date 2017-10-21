@@ -1,4 +1,3 @@
 scheme "licbo"
 clean true
 skip_build true
-custom_report_file_name "report.xml"
