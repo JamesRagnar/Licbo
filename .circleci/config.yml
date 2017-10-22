@@ -15,7 +15,9 @@ jobs:
 
       - run:
           name: Update Ruby
-          command: brew install ruby ; brew link --overwrite ruby
+          command: |
+            brew install ruby
+            brew link --overwrite ruby
 
       - run: 
           name: Bundler
