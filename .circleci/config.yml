@@ -11,7 +11,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - v2-{{ .Branch }}
+            - v3-{{ .Branch }}
 
       - run:
           name: Update Ruby
@@ -28,7 +28,7 @@ jobs:
             pod install --verbose
 
       - save_cache:
-          key: v2-{{ .Branch }}
+          key: v3-{{ .Branch }}
           paths:
             - Pods
             - vendor/bundle
