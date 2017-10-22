@@ -10,10 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RootViewController: BaseTableViewController {
+class RootViewController: BaseViewController {
 
     private var viewModel: RootViewModelType
-    fileprivate lazy var stores = [Store]()
 
     init(_ viewModel: RootViewModelType) {
         self.viewModel = viewModel
@@ -23,30 +22,10 @@ class RootViewController: BaseTableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func loadView() {
         super.loadView()
-
+        
         view.backgroundColor = .gray
-
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
-        NetworkManager.getStores { [weak self] (stores) in
-            DispatchQueue.main.async(execute: { 
-                self?.stores = stores
-                self?.tableView.reloadData()
-            })
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stores.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        let store = stores[indexPath.row]
-        cell.textLabel?.text = store.name
-        return cell
     }
 }

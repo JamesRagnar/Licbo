@@ -2,8 +2,6 @@ machine:
   xcode:
     version: 9.0
 dependencies:
-  post:
-    - bundle exec fastlane setup
   cache_directories:
     - "Pods"
 test:
