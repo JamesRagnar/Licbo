@@ -6,9 +6,6 @@ jobs:
     macos:
       xcode: "9.0"
 
-    docker:
-      - image: circleci/ruby:2.4.1-node
-
     steps:
       - checkout
 
