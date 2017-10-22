@@ -13,6 +13,10 @@ jobs:
           keys:
             - v2-{{ .Branch }}
 
+      - run:
+          name: Update Ruby
+          command: brew install ruby ; brew link --overwrite ruby
+
       - run: 
           name: Bundler
           command: bundle install --path vendor/bundle
