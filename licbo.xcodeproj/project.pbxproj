@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		721232A8620C5C6B50092143 /* Pods_licbo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B333E308B107CBCE355381 /* Pods_licbo.framework */; };
+		ADC925531F9EBBD0009C2EF7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC925521F9EBBD0009C2EF7 /* LocationManager.swift */; };
+		ADC925571F9ECCA7009C2EF7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC925561F9ECCA7009C2EF7 /* NetworkManager.swift */; };
+		ADC925591F9ECCAC009C2EF7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC925581F9ECCAC009C2EF7 /* Store.swift */; };
 		BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FAD01E952841002E59D0 /* RxSwift.framework */; };
 		BA8DB2721E9AB7A3008BB231 /* waterloo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */; };
@@ -51,6 +54,9 @@
 /* Begin PBXFileReference section */
 		0ECB8D745F56319B79866FCE /* Pods-licbo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-licbo.release.xcconfig"; path = "Pods/Target Support Files/Pods-licbo/Pods-licbo.release.xcconfig"; sourceTree = "<group>"; };
 		67AE9A469BFE2F9932C3228E /* Pods-licbo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-licbo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-licbo/Pods-licbo.debug.xcconfig"; sourceTree = "<group>"; };
+		ADC925521F9EBBD0009C2EF7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		ADC925561F9ECCA7009C2EF7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ADC925581F9ECCAC009C2EF7 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BA36FACE1E952841002E59D0 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		BA36FACF1E952841002E59D0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BA36FAD01E952841002E59D0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 				BAA554DD1E94AC1F00F4D455 /* AppDelegate.swift */,
 				BAA554DF1E94AC1F00F4D455 /* RootViewController.swift */,
 				BAA555031E94AE1D00F4D455 /* RootViewModel.swift */,
+				ADC925521F9EBBD0009C2EF7 /* LocationManager.swift */,
+				ADC925561F9ECCA7009C2EF7 /* NetworkManager.swift */,
+				ADC925581F9ECCAC009C2EF7 /* Store.swift */,
 				BAC3B9711E993F0A003E5A92 /* Rx */,
 				BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */,
 				BAA554E41E94AC2000F4D455 /* Assets.xcassets */,
@@ -391,6 +400,9 @@
 			files = (
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
+				ADC925531F9EBBD0009C2EF7 /* LocationManager.swift in Sources */,
+				ADC925591F9ECCAC009C2EF7 /* Store.swift in Sources */,
+				ADC925571F9ECCA7009C2EF7 /* NetworkManager.swift in Sources */,
 				BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */,
 				BAA555041E94AE1D00F4D455 /* RootViewModel.swift in Sources */,
 				BAC3B9701E993ED7003E5A92 /* BaseTableViewController.swift in Sources */,
