@@ -4,17 +4,6 @@ default_platform :ios
 
 platform :ios do
 
-  before_all do
-    Dir.chdir("..") do
-      # code here runs in the parent directory
-      sh "scripts/update_carthage"
-    end    
-  end
-
-  lane :setup do
-    puts "Done"
-  end
-
   lane :test do
     scan
   end

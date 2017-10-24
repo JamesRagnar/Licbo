@@ -65,6 +65,7 @@ playground.xcworkspace
 .build/
 
 Carthage/
+Pods/
 
 fastlane/report.xml
 fastlane/Preview.html

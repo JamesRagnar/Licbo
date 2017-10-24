@@ -1,17 +1,12 @@
 machine:
   xcode:
-    version: 8.2.1
+    version: 9.0
 dependencies:
-  post:
-    - bundle exec fastlane setup
   cache_directories:
-    - "Carthage"
+    - "Pods"
 test:
   override:
     - bundle exec fastlane test
-  post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/fastlane
-    - cp fastlane/test_output/report.xml $CIRCLE_TEST_REPORTS/fastlane
 deployment:
   production:
     branch: beta
