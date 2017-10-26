@@ -11,6 +11,7 @@
 		ADC925531F9EBBD0009C2EF7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC925521F9EBBD0009C2EF7 /* LocationManager.swift */; };
 		ADC925571F9ECCA7009C2EF7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC925561F9ECCA7009C2EF7 /* NetworkManager.swift */; };
 		ADC925591F9ECCAC009C2EF7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC925581F9ECCAC009C2EF7 /* Store.swift */; };
+		ADF6F9841FA1519E00DC95B4 /* LCBOAPINetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF6F9831FA1519E00DC95B4 /* LCBOAPINetworkManager.swift */; };
 		BA36FAD31E952841002E59D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FACF1E952841002E59D0 /* RxCocoa.framework */; };
 		BA36FAD41E952841002E59D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36FAD01E952841002E59D0 /* RxSwift.framework */; };
 		BA8DB2721E9AB7A3008BB231 /* waterloo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */; };
@@ -57,6 +58,7 @@
 		ADC925521F9EBBD0009C2EF7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		ADC925561F9ECCA7009C2EF7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		ADC925581F9ECCAC009C2EF7 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		ADF6F9831FA1519E00DC95B4 /* LCBOAPINetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCBOAPINetworkManager.swift; sourceTree = "<group>"; };
 		BA36FACE1E952841002E59D0 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		BA36FACF1E952841002E59D0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BA36FAD01E952841002E59D0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				BAA555031E94AE1D00F4D455 /* RootViewModel.swift */,
 				ADC925521F9EBBD0009C2EF7 /* LocationManager.swift */,
 				ADC925561F9ECCA7009C2EF7 /* NetworkManager.swift */,
+				ADF6F9831FA1519E00DC95B4 /* LCBOAPINetworkManager.swift */,
 				ADC925581F9ECCAC009C2EF7 /* Store.swift */,
 				BAC3B9711E993F0A003E5A92 /* Rx */,
 				BA8DB2711E9AB7A3008BB231 /* waterloo.gpx */,
@@ -401,6 +404,7 @@
 				BAA554E01E94AC1F00F4D455 /* RootViewController.swift in Sources */,
 				BAC3B96E1E993ED0003E5A92 /* BaseViewController.swift in Sources */,
 				ADC925531F9EBBD0009C2EF7 /* LocationManager.swift in Sources */,
+				ADF6F9841FA1519E00DC95B4 /* LCBOAPINetworkManager.swift in Sources */,
 				ADC925591F9ECCAC009C2EF7 /* Store.swift in Sources */,
 				ADC925571F9ECCA7009C2EF7 /* NetworkManager.swift in Sources */,
 				BAA554DE1E94AC1F00F4D455 /* AppDelegate.swift in Sources */,
@@ -549,7 +553,7 @@
 			baseConfigurationReference = 67AE9A469BFE2F9932C3228E /* Pods-licbo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 81;
 				DEVELOPMENT_TEAM = W375UQHBF4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,7 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 81;
 				DEVELOPMENT_TEAM = W375UQHBF4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -15,9 +15,21 @@ typealias NetworkResponseType = (Data?, URLResponse?, Error?) -> Swift.Void
 class NetworkManager {
     
     private static let tempAccessToken = "Token MDpjY2YyMzU5Ni0xOWE0LTExZTctOWFjNy02ZmVkYzVlMTkwODg6azR2RVVOb2JLcWNEMTRGRmg0NEZiNzdFUEdXZGphR0lxSmNE"
-    private static let rootURL = "https://lcboapi.com/"
+    private static let tempGMapsAPIKey = "AIzaSyDyO_tOYt2q4jvxgBwZ7DHJsaD7YT2xP3A"
     
-    private static func get(_ endpoint: String?, result: @escaping ([String: Any]?) -> Void) {
+    private static let LCBORootURL = "https://lcboapi.com/"
+    
+    public static func GET(_ urlString: String?, callback: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+        guard let urlString = urlString, let url = URL.init(string: urlString) else {
+            callback(nil, nil, nil)
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request, completionHandler: callback)
+    }
+    
+    private static func LCBONetworkGET(_ rootURL: String = LCBORootURL, endpoint: String?, result: @escaping ([String: Any]?) -> Void) {
         
         var urlString = rootURL
         
@@ -55,41 +67,27 @@ class NetworkManager {
             }.resume()
     }
     
-    public static func getStores(near location: CLLocationCoordinate2D? = nil, result: @escaping ([Store]) -> Void) {
+   
+    
+    public static func getDirections(from origin: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, callback: @escaping () -> Void) {
         
-        var endpoint = "stores"
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(tempGMapsAPIKey)"
         
-        if let latitude = location?.latitude,
-            let longitude = location?.longitude {
-            endpoint.append("?lat=\(latitude)&lon=\(longitude)&per_page=5")
-        }
-        
-        get(endpoint) { (data) in
-            var responseData = [Store]()
-            if let stores = data?["result"] as? [[String: Any]] {
-                for storeData in stores {
-                    responseData.append(Store(data: storeData))
-                }
+        NetworkManager.GET(url) { (data, response, error) in
+            <#code#>
+        }            guard let routes = response?["routes"] else {
+                callback()
+                return
             }
-            result(responseData)
-        }
-    }
-    
-//    public static func getProducts(_ result: @escaping ([Product]) -> Void) {
-//        get("products") { (data) in
-//            var responseData = [Product]()
-//            if let products = data?["result"] as? [[String: Any]] {
-//                for productData in products {
-//                    if let newProduct = Product(productData) {
-//                        responseData.append(newProduct)
-//                    }
-//                }
+            
+//            for route in routes
+//            {
+//                let routeOverviewPolyline = route["overview_polyline"].dictionary
+//                let points = routeOverviewPolyline?["points"]?.stringValue
+//                let path = GMSPath.init(fromEncodedPath: points!)
+//                let polyline = GMSPolyline.init(path: path)
+//                polyline.map = self.mapView
 //            }
-//            result(responseData)
-//        }
-//    }
-    
-    public static func getInventories() {
-        
+        }
     }
 }

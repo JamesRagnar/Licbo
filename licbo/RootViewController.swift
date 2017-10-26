@@ -53,39 +53,36 @@ class RootViewController: BaseViewController {
     }
     
     func setup() {
-        viewModel
-            .userLocation
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] (location) in
-                if let location = location {
-                    self?.userLocationPin.position = location
-                    self?.mapView.animate(toLocation: location)
-                }
+        Observable
+            .zip(viewModel.userLocation, viewModel.stores) { return($0, $1) }
+            .subscribe(onNext: { [weak self] (userLocation, stores) in
+//                self?.getDirections(from: userLocation, to: stores.first?.location)
             }).disposed(by: disposeBag)
-        
-        viewModel
-            .stores
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] (stores) in
-                self?.udpateStorePins(stores)
-            }).disposed(by: disposeBag)
-        
     }
     
- func udpateStorePins(_ stores: [Store]) {
-        // remove existing pins
-        for pin in storePins {
-            pin.map = nil
+    func getDirections(from userLocation: CLLocationCoordinate2D?, to storeLocation: CLLocationCoordinate2D?) {
+        guard let userLocation = userLocation, let storeLocation = storeLocation else {
+            return
         }
-        storePins = []
-        for store in stores {
-            guard let location = store.location else {
-                continue
-            }
-            let point = GMSMarker.init(position: location)
-            point.map = self.mapView
-            point.title = store.name
-            storePins.append(point)
+        NetworkManager.getDirections(from: userLocation, to: storeLocation) {
+            
         }
     }
+    
+// func udpateStorePins(_ stores: [Store]) {
+//        // remove existing pins
+//        for pin in storePins {
+//            pin.map = nil
+//        }
+//        storePins = []
+//        for store in stores {
+//            guard let location = store.location else {
+//                continue
+//            }
+//            let point = GMSMarker.init(position: location)
+//            point.map = self.mapView
+//            point.title = store.name
+//            storePins.append(point)
+//        }
+//    }
 }
