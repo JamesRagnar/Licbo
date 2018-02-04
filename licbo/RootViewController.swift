@@ -12,77 +12,83 @@ import RxSwift
 
 class RootViewController: BaseViewController {
 
-    private var viewModel: RootViewModelType
-    
-    private lazy var mapView: GMSMapView = {
-        let camera = GMSCameraPosition.camera(withLatitude: 43.4643, longitude: -80.5204, zoom: 13.0)
-        let mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return mapView
-    }()
-    
-    private lazy var userLocationPin: GMSMarker = {
-        let point = GMSMarker()
-        point.map = self.mapView
-        point.title = "User Location"
-        return point
-    }()
-    
-    private lazy var storePins = [GMSMarker]()
+    private let viewModel: RootViewModelType
 
-    init(_ viewModel: RootViewModelType) {
+    private lazy var imageCache = ImageManager()
+
+    private lazy var layout: UICollectionViewLayout = {
+        return UICollectionViewFlowLayout()
+    }()
+
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: self.view.bounds,
+                                              collectionViewLayout: self.layout)
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib.init(nibName: "ProductCollectionViewCell", bundle: nil),
+                                forCellWithReuseIdentifier: "cell")
+        collectionView.backgroundColor = .gray
+        return collectionView
+    }()
+
+    private lazy var products = [ProductModelType]()
+
+    init(viewModel: RootViewModelType) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-        setup()
+        super.init()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func loadView() {
         super.loadView()
-        
-        view.addSubview(mapView)
+
+        view.addSubview(collectionView)
     }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        mapView.padding = view.safeAreaInsets
-    }
-    
-    func setup() {
-        Observable
-            .zip(viewModel.userLocation, viewModel.stores) { return($0, $1) }
-            .subscribe(onNext: { [weak self] (userLocation, stores) in
-//                self?.getDirections(from: userLocation, to: stores.first?.location)
+
+    override func viewDidLoad() {
+
+        viewModel
+            .products
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (productUpdates) in
+                self?.products = productUpdates
+                self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
     }
-    
-    func getDirections(from userLocation: CLLocationCoordinate2D?, to storeLocation: CLLocationCoordinate2D?) {
-        guard let userLocation = userLocation, let storeLocation = storeLocation else {
-            return
-        }
-        NetworkManager.getDirections(from: userLocation, to: storeLocation) {
-            
-        }
+}
+
+extension RootViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
     }
-    
-// func udpateStorePins(_ stores: [Store]) {
-//        // remove existing pins
-//        for pin in storePins {
-//            pin.map = nil
-//        }
-//        storePins = []
-//        for store in stores {
-//            guard let location = store.location else {
-//                continue
-//            }
-//            let point = GMSMarker.init(position: location)
-//            point.map = self.mapView
-//            point.title = store.name
-//            storePins.append(point)
-//        }
-//    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell else {
+            fatalError()
+        }
+
+        let product = products[indexPath.row]
+        cell.imageCache = imageCache
+        cell.bind(product)
+
+        return cell
+    }
+}
+
+extension RootViewController: UICollectionViewDelegate {
+
+}
+
+extension RootViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width - 20, height: 300)
+    }
 }

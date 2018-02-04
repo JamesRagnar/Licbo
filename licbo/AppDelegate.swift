@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyDnvqcJAhZr7NqB3sWNj1D2YLjIP_KEafI")
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = RootViewController(RootViewModel())
+        window?.rootViewController = RootViewController(viewModel: RootViewModel())
         window?.makeKeyAndVisible()
         return true
     }
