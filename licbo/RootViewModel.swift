@@ -12,6 +12,7 @@ import CoreLocation
 
 protocol RootViewModelType {
     var products: Observable<[Product]> { get }
+    func search(for query: String)
 }
 
 class RootViewModel {
@@ -19,13 +20,7 @@ class RootViewModel {
     private var productCache = Variable<[Product]>([])
 
     init() {
-        fetchProducts()
-    }
 
-    func fetchProducts() {
-        LCBOAPINetworkManager.getProducts { (products) in
-            self.productCache.value = products
-        }
     }
 }
 
@@ -33,5 +28,11 @@ extension RootViewModel: RootViewModelType {
 
     var products: Observable<[Product]> {
         return productCache.asObservable()
+    }
+
+    func search(for query: String) {
+        LCBOAPINetworkManager.findProducts(with: query) { (products) in
+            self.productCache.value = products
+        }
     }
 }

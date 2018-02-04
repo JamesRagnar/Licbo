@@ -17,7 +17,8 @@ class RootViewController: BaseViewController {
     private lazy var imageCache = ImageManager()
 
     private lazy var layout: UICollectionViewLayout = {
-        return UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
+        return layout
     }()
 
     private lazy var collectionView: UICollectionView = {
@@ -30,6 +31,13 @@ class RootViewController: BaseViewController {
                                 forCellWithReuseIdentifier: "cell")
         collectionView.backgroundColor = .gray
         return collectionView
+    }()
+
+    private lazy var searchBar: ProductSearchBar = {
+        let searchBar:ProductSearchBar = .fromNib()
+        searchBar.frame = CGRect(x: 0, y: 40, width: view.bounds.width, height: 80)
+        searchBar.autoresizingMask = [.flexibleWidth]
+        return searchBar
     }()
 
     private lazy var products = [ProductModelType]()
@@ -47,6 +55,7 @@ class RootViewController: BaseViewController {
         super.loadView()
 
         view.addSubview(collectionView)
+        view.addSubview(searchBar)
     }
 
     override func viewDidLoad() {
@@ -58,6 +67,13 @@ class RootViewController: BaseViewController {
                 self?.products = productUpdates
                 self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
+
+        searchBar
+            .queryString
+            .debounce(0.5, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (query) in
+                self?.viewModel.search(for: query)
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -90,5 +106,9 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width - 20, height: 300)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(100, 0, 0, 0)
     }
 }

@@ -46,6 +46,20 @@ class LCBOAPINetworkManager {
             result(responseData)
         }
     }
+
+    public static func findProducts(with query: String, result: @escaping ([Product]) -> Void) {
+        let endpoint = "products?q=\(query)"
+
+        LCBONetworkGET(endpoint: endpoint) { (data) in
+            var responseData = [Product]()
+            if let products = data?["result"] as? [[String: Any]] {
+                for productData in products {
+                    responseData.append(Product(data: productData))
+                }
+            }
+            result(responseData)
+        }
+    }
     
     private static func LCBONetworkGET(_ rootURL: String = LCBORootURL, endpoint: String?, result: @escaping ([String: Any]?) -> Void) {
         
